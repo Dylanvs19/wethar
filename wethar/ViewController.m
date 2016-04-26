@@ -123,9 +123,9 @@
     
 }
 
--(void)getPhotoFromFlickrWithCompletionBlock:(void(^)(NSDictionary *))completionBlock {
+-(void)getPhotoFromFlickrWithCompletionBlock:(void(^)(NSArray *))completionBlock {
     
-    NSURL *flickerAPI = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services?api_key=%@&lat=%@&lon=%@",FLICKR_API_KEY,self.latitude,self.longitude]];
+    NSURL *flickerAPI = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&lat=%@&lon=-%@&accuracy=3&extras=url_c,views&format=json&tags=%@,%@",FLICKR_API_KEY,self.latitude,self.longitude,self.city,self.state]];
     
     NSURLSession * session = [NSURLSession sharedSession];
     
@@ -133,12 +133,24 @@
        
         NSDictionary * dataToSend = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
-        completionBlock(dataToSend);
+        NSArray *photos = dataToSend[@"photos"][@"photo"];
+        
+        completionBlock(photos);
         
     }];
     
     [dataTask resume];
 }
+
+-(void)selectPhoto {
+    [self getPhotoFromFlickrWithCompletionBlock:^(NSArray *photosArray) {
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"value"]
+        
+    }];
+    
+}
+
 
 
 @end

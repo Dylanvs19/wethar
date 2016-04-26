@@ -16,6 +16,7 @@
 		AFDE00FE1CCED38F0012EE7A /* wetharTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE00FD1CCED38F0012EE7A /* wetharTests.m */; };
 		AFDE01091CCED38F0012EE7A /* wetharUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01081CCED38F0012EE7A /* wetharUITests.m */; };
 		AFDE01181CCEE18F0012EE7A /* secrets.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01171CCEE18F0012EE7A /* secrets.m */; };
+		AFDE01251CD014D10012EE7A /* flickrAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01241CD014D10012EE7A /* flickrAPIClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		AFDE010A1CCED38F0012EE7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFDE01161CCEE18F0012EE7A /* secrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = secrets.h; path = ../secrets.h; sourceTree = "<group>"; };
 		AFDE01171CCEE18F0012EE7A /* secrets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = secrets.m; path = ../secrets.m; sourceTree = "<group>"; };
+		AFDE01231CD014D10012EE7A /* flickrAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flickrAPIClient.h; sourceTree = "<group>"; };
+		AFDE01241CD014D10012EE7A /* flickrAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = flickrAPIClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				AFDE00E71CCED38F0012EE7A /* AppDelegate.m */,
 				AFDE00E91CCED38F0012EE7A /* ViewController.h */,
 				AFDE00EA1CCED38F0012EE7A /* ViewController.m */,
+				AFDE01231CD014D10012EE7A /* flickrAPIClient.h */,
+				AFDE01241CD014D10012EE7A /* flickrAPIClient.m */,
 				AFDE00EC1CCED38F0012EE7A /* Main.storyboard */,
 				AFDE00EF1CCED38F0012EE7A /* Assets.xcassets */,
 				AFDE00F11CCED38F0012EE7A /* LaunchScreen.storyboard */,
@@ -280,6 +285,7 @@
 			files = (
 				AFDE00EB1CCED38F0012EE7A /* ViewController.m in Sources */,
 				AFDE01181CCEE18F0012EE7A /* secrets.m in Sources */,
+				AFDE01251CD014D10012EE7A /* flickrAPIClient.m in Sources */,
 				AFDE00E81CCED38F0012EE7A /* AppDelegate.m in Sources */,
 				AFDE00E51CCED38F0012EE7A /* main.m in Sources */,
 			);
