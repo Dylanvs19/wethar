@@ -145,7 +145,22 @@
 -(void)selectPhoto {
     [self getPhotoFromFlickrWithCompletionBlock:^(NSArray *photosArray) {
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"value"]
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"views > 100"];
+        NSArray *photos = [photosArray filteredArrayUsingPredicate:predicate];
+        
+        if(photos == nil) {
+            
+            // add weird photo in xcassets
+            
+        } else {
+            
+            NSDictionary *photoDictionary = [photos objectAtIndex:arc4random() %photos.count];
+            
+            photoDictionary[
+            
+        }
+        
+        
         
     }];
     
