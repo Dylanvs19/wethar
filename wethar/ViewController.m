@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "secrets.h"
+#import "wundergroundAPIClient.h"
+#import "flickrAPIClient.h"
 @import CoreLocation;
 
 
@@ -35,7 +37,10 @@
 }
 
 - (void)updateTheLabelsWithWeatherDataFromCurrentLocation {
-    [self fetchWeatherDataForLocationWithCompletionBlock:^(NSDictionary *data) {
+    
+    wundergroundAPIClient *client = [[wundergroundAPIClient alloc]init];
+    
+    [client fetchWeatherDataForLocationWithCity:self.urlCity state:self.state andCompletionBlock:^(NSDictionary *data) {
         
         [[NSOperationQueue mainQueue]addOperationWithBlock:^{
             
@@ -105,64 +110,12 @@
 }
 
 
--(void)fetchWeatherDataForLocationWithCompletionBlock:(void(^)(NSDictionary*data))completionBlock {
-
-    NSURL *weatherApi = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/q/%@/%@.json",WEATHER_API_KEY,self.state, self.urlCity]];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:weatherApi completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
-        NSDictionary *dataToSend = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        
-        completionBlock(dataToSend);
-        
-    }];
-    
-    [dataTask resume];
-    
-}
-
--(void)getPhotoFromFlickrWithCompletionBlock:(void(^)(NSArray *))completionBlock {
-    
-    NSURL *flickerAPI = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&lat=%@&lon=-%@&accuracy=3&extras=url_c,views&format=json&tags=%@,%@",FLICKR_API_KEY,self.latitude,self.longitude,self.city,self.state]];
-    
-    NSURLSession * session = [NSURLSession sharedSession];
-    
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:flickerAPI completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-       
-        NSDictionary * dataToSend = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        
-        NSArray *photos = dataToSend[@"photos"][@"photo"];
-        
-        completionBlock(photos);
-        
-    }];
-    
-    [dataTask resume];
-}
-
 -(void)selectPhoto {
-    [self getPhotoFromFlickrWithCompletionBlock:^(NSArray *photosArray) {
-        
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"views > 100"];
-        NSArray *photos = [photosArray filteredArrayUsingPredicate:predicate];
-        
-        if(photos == nil) {
-            
-            // add weird photo in xcassets
-            
-        } else {
-            
-            NSDictionary *photoDictionary = [photos objectAtIndex:arc4random() %photos.count];
-            
-            photoDictionary[
-            
-        }
-        
-        
-        
-    }];
+    
+    flickrAPIClient *APIClient = [[flickrAPIClient alloc]init];
+    
+    [APIClient  ]
+  
     
 }
 

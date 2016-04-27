@@ -17,6 +17,7 @@
 		AFDE01091CCED38F0012EE7A /* wetharUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01081CCED38F0012EE7A /* wetharUITests.m */; };
 		AFDE01181CCEE18F0012EE7A /* secrets.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01171CCEE18F0012EE7A /* secrets.m */; };
 		AFDE01251CD014D10012EE7A /* flickrAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01241CD014D10012EE7A /* flickrAPIClient.m */; };
+		AFDE01281CD050D20012EE7A /* wundergroundAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01271CD050D20012EE7A /* wundergroundAPIClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		AFDE01171CCEE18F0012EE7A /* secrets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = secrets.m; path = ../secrets.m; sourceTree = "<group>"; };
 		AFDE01231CD014D10012EE7A /* flickrAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flickrAPIClient.h; sourceTree = "<group>"; };
 		AFDE01241CD014D10012EE7A /* flickrAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = flickrAPIClient.m; sourceTree = "<group>"; };
+		AFDE01261CD050D20012EE7A /* wundergroundAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = wundergroundAPIClient.h; path = ../wundergroundAPIClient.h; sourceTree = "<group>"; };
+		AFDE01271CD050D20012EE7A /* wundergroundAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = wundergroundAPIClient.m; path = ../wundergroundAPIClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				AFDE00EA1CCED38F0012EE7A /* ViewController.m */,
 				AFDE01231CD014D10012EE7A /* flickrAPIClient.h */,
 				AFDE01241CD014D10012EE7A /* flickrAPIClient.m */,
+				AFDE01261CD050D20012EE7A /* wundergroundAPIClient.h */,
+				AFDE01271CD050D20012EE7A /* wundergroundAPIClient.m */,
 				AFDE00EC1CCED38F0012EE7A /* Main.storyboard */,
 				AFDE00EF1CCED38F0012EE7A /* Assets.xcassets */,
 				AFDE00F11CCED38F0012EE7A /* LaunchScreen.storyboard */,
@@ -288,6 +293,7 @@
 				AFDE01251CD014D10012EE7A /* flickrAPIClient.m in Sources */,
 				AFDE00E81CCED38F0012EE7A /* AppDelegate.m in Sources */,
 				AFDE00E51CCED38F0012EE7A /* main.m in Sources */,
+				AFDE01281CD050D20012EE7A /* wundergroundAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +519,7 @@
 				AFDE010F1CCED38F0012EE7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AFDE01101CCED38F0012EE7A /* Build configuration list for PBXNativeTarget "wetharTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +528,7 @@
 				AFDE01121CCED38F0012EE7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AFDE01131CCED38F0012EE7A /* Build configuration list for PBXNativeTarget "wetharUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +537,7 @@
 				AFDE01151CCED38F0012EE7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

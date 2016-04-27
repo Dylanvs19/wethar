@@ -5,6 +5,8 @@
 
 target 'wethar' do
 
+pod 'AFNetworking'
+
 end
 
 target 'wetharTests' do

@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "secrets.h"
 
 @interface flickrAPIClient : NSObject
+
+-(void)getPhotoFromFlickrWithLatitude:(NSString *)latitude longitude:(NSString *)longitude city:(NSString *)city state:(NSString *)state andCompletionBlock:(void(^)(UIImage *))completionBlock;
 
 @end
