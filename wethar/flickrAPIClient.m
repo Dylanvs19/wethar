@@ -7,6 +7,7 @@
 //
 
 #import "flickrAPIClient.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation flickrAPIClient
 
@@ -47,7 +48,11 @@
             
             NSDictionary *photoDictionary = [finalPhotoArray objectAtIndex:arc4random() %finalPhotoArray.count];
             
-            UIImage *image = [image imageforURL:[NSURL URLWithString:photoDictionary[@"url_c"]]];
+            NSURL *url = [NSURL URLWithString:photoDictionary[@"url_c"]];
+            
+            AFImageDownloader *downloader = [AFImageDownloader sharedImageDownloader];
+            
+            UIImage *image = [downloader setImageWithURL:url];
             
             completionBlock(image);
             
@@ -57,6 +62,8 @@
     
     [dataTask resume];
 }
+
+
 
 
 @end

@@ -1,545 +1,1302 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		AFDE00E51CCED38F0012EE7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE00E41CCED38F0012EE7A /* main.m */; };
-		AFDE00E81CCED38F0012EE7A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE00E71CCED38F0012EE7A /* AppDelegate.m */; };
-		AFDE00EB1CCED38F0012EE7A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE00EA1CCED38F0012EE7A /* ViewController.m */; };
-		AFDE00EE1CCED38F0012EE7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFDE00EC1CCED38F0012EE7A /* Main.storyboard */; };
-		AFDE00F01CCED38F0012EE7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFDE00EF1CCED38F0012EE7A /* Assets.xcassets */; };
-		AFDE00F31CCED38F0012EE7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFDE00F11CCED38F0012EE7A /* LaunchScreen.storyboard */; };
-		AFDE00FE1CCED38F0012EE7A /* wetharTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE00FD1CCED38F0012EE7A /* wetharTests.m */; };
-		AFDE01091CCED38F0012EE7A /* wetharUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01081CCED38F0012EE7A /* wetharUITests.m */; };
-		AFDE01181CCEE18F0012EE7A /* secrets.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01171CCEE18F0012EE7A /* secrets.m */; };
-		AFDE01251CD014D10012EE7A /* flickrAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01241CD014D10012EE7A /* flickrAPIClient.m */; };
-		AFDE01281CD050D20012EE7A /* wundergroundAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01271CD050D20012EE7A /* wundergroundAPIClient.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		AFDE00FA1CCED38F0012EE7A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AFDE00D81CCED38F0012EE7A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AFDE00DF1CCED38F0012EE7A;
-			remoteInfo = wethar;
-		};
-		AFDE01051CCED38F0012EE7A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AFDE00D81CCED38F0012EE7A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AFDE00DF1CCED38F0012EE7A;
-			remoteInfo = wethar;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		AFDE00E01CCED38F0012EE7A /* wethar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wethar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFDE00E41CCED38F0012EE7A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AFDE00E61CCED38F0012EE7A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		AFDE00E71CCED38F0012EE7A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AFDE00E91CCED38F0012EE7A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AFDE00EA1CCED38F0012EE7A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		AFDE00ED1CCED38F0012EE7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AFDE00EF1CCED38F0012EE7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AFDE00F21CCED38F0012EE7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AFDE00F41CCED38F0012EE7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFDE00F91CCED38F0012EE7A /* wetharTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wetharTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFDE00FD1CCED38F0012EE7A /* wetharTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wetharTests.m; sourceTree = "<group>"; };
-		AFDE00FF1CCED38F0012EE7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFDE01041CCED38F0012EE7A /* wetharUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wetharUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFDE01081CCED38F0012EE7A /* wetharUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wetharUITests.m; sourceTree = "<group>"; };
-		AFDE010A1CCED38F0012EE7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFDE01161CCEE18F0012EE7A /* secrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = secrets.h; path = ../secrets.h; sourceTree = "<group>"; };
-		AFDE01171CCEE18F0012EE7A /* secrets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = secrets.m; path = ../secrets.m; sourceTree = "<group>"; };
-		AFDE01231CD014D10012EE7A /* flickrAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flickrAPIClient.h; sourceTree = "<group>"; };
-		AFDE01241CD014D10012EE7A /* flickrAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = flickrAPIClient.m; sourceTree = "<group>"; };
-		AFDE01261CD050D20012EE7A /* wundergroundAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = wundergroundAPIClient.h; path = ../wundergroundAPIClient.h; sourceTree = "<group>"; };
-		AFDE01271CD050D20012EE7A /* wundergroundAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = wundergroundAPIClient.m; path = ../wundergroundAPIClient.m; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		AFDE00DD1CCED38F0012EE7A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AFDE00F61CCED38F0012EE7A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AFDE01011CCED38F0012EE7A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		AFDE00D71CCED38F0012EE7A = {
-			isa = PBXGroup;
-			children = (
-				AFDE00E21CCED38F0012EE7A /* wethar */,
-				AFDE00FC1CCED38F0012EE7A /* wetharTests */,
-				AFDE01071CCED38F0012EE7A /* wetharUITests */,
-				AFDE00E11CCED38F0012EE7A /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		AFDE00E11CCED38F0012EE7A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AFDE00E01CCED38F0012EE7A /* wethar.app */,
-				AFDE00F91CCED38F0012EE7A /* wetharTests.xctest */,
-				AFDE01041CCED38F0012EE7A /* wetharUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		AFDE00E21CCED38F0012EE7A /* wethar */ = {
-			isa = PBXGroup;
-			children = (
-				AFDE01161CCEE18F0012EE7A /* secrets.h */,
-				AFDE01171CCEE18F0012EE7A /* secrets.m */,
-				AFDE00E61CCED38F0012EE7A /* AppDelegate.h */,
-				AFDE00E71CCED38F0012EE7A /* AppDelegate.m */,
-				AFDE00E91CCED38F0012EE7A /* ViewController.h */,
-				AFDE00EA1CCED38F0012EE7A /* ViewController.m */,
-				AFDE01231CD014D10012EE7A /* flickrAPIClient.h */,
-				AFDE01241CD014D10012EE7A /* flickrAPIClient.m */,
-				AFDE01261CD050D20012EE7A /* wundergroundAPIClient.h */,
-				AFDE01271CD050D20012EE7A /* wundergroundAPIClient.m */,
-				AFDE00EC1CCED38F0012EE7A /* Main.storyboard */,
-				AFDE00EF1CCED38F0012EE7A /* Assets.xcassets */,
-				AFDE00F11CCED38F0012EE7A /* LaunchScreen.storyboard */,
-				AFDE00F41CCED38F0012EE7A /* Info.plist */,
-				AFDE00E31CCED38F0012EE7A /* Supporting Files */,
-			);
-			path = wethar;
-			sourceTree = "<group>";
-		};
-		AFDE00E31CCED38F0012EE7A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AFDE00E41CCED38F0012EE7A /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AFDE00FC1CCED38F0012EE7A /* wetharTests */ = {
-			isa = PBXGroup;
-			children = (
-				AFDE00FD1CCED38F0012EE7A /* wetharTests.m */,
-				AFDE00FF1CCED38F0012EE7A /* Info.plist */,
-			);
-			path = wetharTests;
-			sourceTree = "<group>";
-		};
-		AFDE01071CCED38F0012EE7A /* wetharUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AFDE01081CCED38F0012EE7A /* wetharUITests.m */,
-				AFDE010A1CCED38F0012EE7A /* Info.plist */,
-			);
-			path = wetharUITests;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		AFDE00DF1CCED38F0012EE7A /* wethar */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AFDE010D1CCED38F0012EE7A /* Build configuration list for PBXNativeTarget "wethar" */;
-			buildPhases = (
-				AFDE00DC1CCED38F0012EE7A /* Sources */,
-				AFDE00DD1CCED38F0012EE7A /* Frameworks */,
-				AFDE00DE1CCED38F0012EE7A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = wethar;
-			productName = wethar;
-			productReference = AFDE00E01CCED38F0012EE7A /* wethar.app */;
-			productType = "com.apple.product-type.application";
-		};
-		AFDE00F81CCED38F0012EE7A /* wetharTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AFDE01101CCED38F0012EE7A /* Build configuration list for PBXNativeTarget "wetharTests" */;
-			buildPhases = (
-				AFDE00F51CCED38F0012EE7A /* Sources */,
-				AFDE00F61CCED38F0012EE7A /* Frameworks */,
-				AFDE00F71CCED38F0012EE7A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AFDE00FB1CCED38F0012EE7A /* PBXTargetDependency */,
-			);
-			name = wetharTests;
-			productName = wetharTests;
-			productReference = AFDE00F91CCED38F0012EE7A /* wetharTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		AFDE01031CCED38F0012EE7A /* wetharUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AFDE01131CCED38F0012EE7A /* Build configuration list for PBXNativeTarget "wetharUITests" */;
-			buildPhases = (
-				AFDE01001CCED38F0012EE7A /* Sources */,
-				AFDE01011CCED38F0012EE7A /* Frameworks */,
-				AFDE01021CCED38F0012EE7A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AFDE01061CCED38F0012EE7A /* PBXTargetDependency */,
-			);
-			name = wetharUITests;
-			productName = wetharUITests;
-			productReference = AFDE01041CCED38F0012EE7A /* wetharUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		AFDE00D81CCED38F0012EE7A /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "Dylan Straughan";
-				TargetAttributes = {
-					AFDE00DF1CCED38F0012EE7A = {
-						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = R2XL2EPM9B;
-					};
-					AFDE00F81CCED38F0012EE7A = {
-						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = R2XL2EPM9B;
-						TestTargetID = AFDE00DF1CCED38F0012EE7A;
-					};
-					AFDE01031CCED38F0012EE7A = {
-						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = R2XL2EPM9B;
-						TestTargetID = AFDE00DF1CCED38F0012EE7A;
-					};
-				};
-			};
-			buildConfigurationList = AFDE00DB1CCED38F0012EE7A /* Build configuration list for PBXProject "wethar" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = AFDE00D71CCED38F0012EE7A;
-			productRefGroup = AFDE00E11CCED38F0012EE7A /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				AFDE00DF1CCED38F0012EE7A /* wethar */,
-				AFDE00F81CCED38F0012EE7A /* wetharTests */,
-				AFDE01031CCED38F0012EE7A /* wetharUITests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		AFDE00DE1CCED38F0012EE7A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AFDE00F31CCED38F0012EE7A /* LaunchScreen.storyboard in Resources */,
-				AFDE00F01CCED38F0012EE7A /* Assets.xcassets in Resources */,
-				AFDE00EE1CCED38F0012EE7A /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AFDE00F71CCED38F0012EE7A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AFDE01021CCED38F0012EE7A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		AFDE00DC1CCED38F0012EE7A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AFDE00EB1CCED38F0012EE7A /* ViewController.m in Sources */,
-				AFDE01181CCEE18F0012EE7A /* secrets.m in Sources */,
-				AFDE01251CD014D10012EE7A /* flickrAPIClient.m in Sources */,
-				AFDE00E81CCED38F0012EE7A /* AppDelegate.m in Sources */,
-				AFDE00E51CCED38F0012EE7A /* main.m in Sources */,
-				AFDE01281CD050D20012EE7A /* wundergroundAPIClient.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AFDE00F51CCED38F0012EE7A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AFDE00FE1CCED38F0012EE7A /* wetharTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AFDE01001CCED38F0012EE7A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AFDE01091CCED38F0012EE7A /* wetharUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AFDE00FB1CCED38F0012EE7A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AFDE00DF1CCED38F0012EE7A /* wethar */;
-			targetProxy = AFDE00FA1CCED38F0012EE7A /* PBXContainerItemProxy */;
-		};
-		AFDE01061CCED38F0012EE7A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AFDE00DF1CCED38F0012EE7A /* wethar */;
-			targetProxy = AFDE01051CCED38F0012EE7A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		AFDE00EC1CCED38F0012EE7A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AFDE00ED1CCED38F0012EE7A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AFDE00F11CCED38F0012EE7A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AFDE00F21CCED38F0012EE7A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		AFDE010B1CCED38F0012EE7A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		AFDE010C1CCED38F0012EE7A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		AFDE010E1CCED38F0012EE7A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = wethar/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chance.wethar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		AFDE010F1CCED38F0012EE7A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = wethar/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chance.wethar;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		AFDE01111CCED38F0012EE7A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = wetharTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chance.wetharTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wethar.app/wethar";
-			};
-			name = Debug;
-		};
-		AFDE01121CCED38F0012EE7A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = wetharTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chance.wetharTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wethar.app/wethar";
-			};
-			name = Release;
-		};
-		AFDE01141CCED38F0012EE7A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = wetharUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chance.wetharUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = wethar;
-			};
-			name = Debug;
-		};
-		AFDE01151CCED38F0012EE7A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = wetharUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chance.wetharUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = wethar;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		AFDE00DB1CCED38F0012EE7A /* Build configuration list for PBXProject "wethar" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AFDE010B1CCED38F0012EE7A /* Debug */,
-				AFDE010C1CCED38F0012EE7A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AFDE010D1CCED38F0012EE7A /* Build configuration list for PBXNativeTarget "wethar" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AFDE010E1CCED38F0012EE7A /* Debug */,
-				AFDE010F1CCED38F0012EE7A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AFDE01101CCED38F0012EE7A /* Build configuration list for PBXNativeTarget "wetharTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AFDE01111CCED38F0012EE7A /* Debug */,
-				AFDE01121CCED38F0012EE7A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AFDE01131CCED38F0012EE7A /* Build configuration list for PBXNativeTarget "wetharUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AFDE01141CCED38F0012EE7A /* Debug */,
-				AFDE01151CCED38F0012EE7A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = AFDE00D81CCED38F0012EE7A /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>1D8B52360930BBFECE5C7F8A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>215AD4E600743FA31F340CCF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E7218F22C0B070B8423A285A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3BC9C6B1884D00E58BEB7F35</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F7575D897FF9E4C44D1AB7F7</string>
+				<string>AD5C9E823125B120AD959057</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A04C30031D8F648C74E8B4E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-wethar/Pods-wethar-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>9A38FE2B44FF734D6A2EB30C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E7218F22C0B070B8423A285A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9C666DFBB4CE499426C4DAE0</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-wethar/Pods-wethar-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>AD5C9E823125B120AD959057</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-wethar.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-wethar/Pods-wethar.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00D71CCED38F0012EE7A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AFDE00E21CCED38F0012EE7A</string>
+				<string>AFDE00FC1CCED38F0012EE7A</string>
+				<string>AFDE01071CCED38F0012EE7A</string>
+				<string>AFDE00E11CCED38F0012EE7A</string>
+				<string>3BC9C6B1884D00E58BEB7F35</string>
+				<string>215AD4E600743FA31F340CCF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00D81CCED38F0012EE7A</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0730</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Dylan Straughan</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>AFDE00DF1CCED38F0012EE7A</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3</string>
+						<key>DevelopmentTeam</key>
+						<string>R2XL2EPM9B</string>
+					</dict>
+					<key>AFDE00F81CCED38F0012EE7A</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3</string>
+						<key>DevelopmentTeam</key>
+						<string>R2XL2EPM9B</string>
+						<key>TestTargetID</key>
+						<string>AFDE00DF1CCED38F0012EE7A</string>
+					</dict>
+					<key>AFDE01031CCED38F0012EE7A</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3</string>
+						<key>DevelopmentTeam</key>
+						<string>R2XL2EPM9B</string>
+						<key>TestTargetID</key>
+						<string>AFDE00DF1CCED38F0012EE7A</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>AFDE00DB1CCED38F0012EE7A</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>AFDE00D71CCED38F0012EE7A</string>
+			<key>productRefGroup</key>
+			<string>AFDE00E11CCED38F0012EE7A</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>AFDE00DF1CCED38F0012EE7A</string>
+				<string>AFDE00F81CCED38F0012EE7A</string>
+				<string>AFDE01031CCED38F0012EE7A</string>
+			</array>
+		</dict>
+		<key>AFDE00DB1CCED38F0012EE7A</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>AFDE010B1CCED38F0012EE7A</string>
+				<string>AFDE010C1CCED38F0012EE7A</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>AFDE00DC1CCED38F0012EE7A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>AFDE00EB1CCED38F0012EE7A</string>
+				<string>AFDE01181CCEE18F0012EE7A</string>
+				<string>AFDE01251CD014D10012EE7A</string>
+				<string>AFDE00E81CCED38F0012EE7A</string>
+				<string>AFDE00E51CCED38F0012EE7A</string>
+				<string>AFDE01281CD050D20012EE7A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AFDE00DD1CCED38F0012EE7A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9A38FE2B44FF734D6A2EB30C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AFDE00DE1CCED38F0012EE7A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>AFDE00F31CCED38F0012EE7A</string>
+				<string>AFDE00F01CCED38F0012EE7A</string>
+				<string>AFDE00EE1CCED38F0012EE7A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AFDE00DF1CCED38F0012EE7A</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>AFDE010D1CCED38F0012EE7A</string>
+			<key>buildPhases</key>
+			<array>
+				<string>1D8B52360930BBFECE5C7F8A</string>
+				<string>AFDE00DC1CCED38F0012EE7A</string>
+				<string>AFDE00DD1CCED38F0012EE7A</string>
+				<string>AFDE00DE1CCED38F0012EE7A</string>
+				<string>9C666DFBB4CE499426C4DAE0</string>
+				<string>6A04C30031D8F648C74E8B4E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>wethar</string>
+			<key>productName</key>
+			<string>wethar</string>
+			<key>productReference</key>
+			<string>AFDE00E01CCED38F0012EE7A</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>AFDE00E01CCED38F0012EE7A</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>wethar.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>AFDE00E11CCED38F0012EE7A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AFDE00E01CCED38F0012EE7A</string>
+				<string>AFDE00F91CCED38F0012EE7A</string>
+				<string>AFDE01041CCED38F0012EE7A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00E21CCED38F0012EE7A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AFDE01161CCEE18F0012EE7A</string>
+				<string>AFDE01171CCEE18F0012EE7A</string>
+				<string>AFDE00E61CCED38F0012EE7A</string>
+				<string>AFDE00E71CCED38F0012EE7A</string>
+				<string>AFDE00E91CCED38F0012EE7A</string>
+				<string>AFDE00EA1CCED38F0012EE7A</string>
+				<string>AFDE01231CD014D10012EE7A</string>
+				<string>AFDE01241CD014D10012EE7A</string>
+				<string>AFDE01261CD050D20012EE7A</string>
+				<string>AFDE01271CD050D20012EE7A</string>
+				<string>AFDE00EC1CCED38F0012EE7A</string>
+				<string>AFDE00EF1CCED38F0012EE7A</string>
+				<string>AFDE00F11CCED38F0012EE7A</string>
+				<string>AFDE00F41CCED38F0012EE7A</string>
+				<string>AFDE00E31CCED38F0012EE7A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>wethar</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00E31CCED38F0012EE7A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AFDE00E41CCED38F0012EE7A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00E41CCED38F0012EE7A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00E51CCED38F0012EE7A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AFDE00E41CCED38F0012EE7A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AFDE00E61CCED38F0012EE7A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>AppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00E71CCED38F0012EE7A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>AppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00E81CCED38F0012EE7A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AFDE00E71CCED38F0012EE7A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AFDE00E91CCED38F0012EE7A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00EA1CCED38F0012EE7A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00EB1CCED38F0012EE7A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AFDE00EA1CCED38F0012EE7A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AFDE00EC1CCED38F0012EE7A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AFDE00ED1CCED38F0012EE7A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00ED1CCED38F0012EE7A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00EE1CCED38F0012EE7A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AFDE00EC1CCED38F0012EE7A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AFDE00EF1CCED38F0012EE7A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Assets.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00F01CCED38F0012EE7A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AFDE00EF1CCED38F0012EE7A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AFDE00F11CCED38F0012EE7A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AFDE00F21CCED38F0012EE7A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00F21CCED38F0012EE7A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00F31CCED38F0012EE7A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AFDE00F11CCED38F0012EE7A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AFDE00F41CCED38F0012EE7A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00F51CCED38F0012EE7A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>AFDE00FE1CCED38F0012EE7A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AFDE00F61CCED38F0012EE7A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AFDE00F71CCED38F0012EE7A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AFDE00F81CCED38F0012EE7A</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>AFDE01101CCED38F0012EE7A</string>
+			<key>buildPhases</key>
+			<array>
+				<string>AFDE00F51CCED38F0012EE7A</string>
+				<string>AFDE00F61CCED38F0012EE7A</string>
+				<string>AFDE00F71CCED38F0012EE7A</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>AFDE00FB1CCED38F0012EE7A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>wetharTests</string>
+			<key>productName</key>
+			<string>wetharTests</string>
+			<key>productReference</key>
+			<string>AFDE00F91CCED38F0012EE7A</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>AFDE00F91CCED38F0012EE7A</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>wetharTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>AFDE00FA1CCED38F0012EE7A</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>AFDE00D81CCED38F0012EE7A</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>AFDE00DF1CCED38F0012EE7A</string>
+			<key>remoteInfo</key>
+			<string>wethar</string>
+		</dict>
+		<key>AFDE00FB1CCED38F0012EE7A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>AFDE00DF1CCED38F0012EE7A</string>
+			<key>targetProxy</key>
+			<string>AFDE00FA1CCED38F0012EE7A</string>
+		</dict>
+		<key>AFDE00FC1CCED38F0012EE7A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AFDE00FD1CCED38F0012EE7A</string>
+				<string>AFDE00FF1CCED38F0012EE7A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>wetharTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00FD1CCED38F0012EE7A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>wetharTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE00FE1CCED38F0012EE7A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AFDE00FD1CCED38F0012EE7A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AFDE00FF1CCED38F0012EE7A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE01001CCED38F0012EE7A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>AFDE01091CCED38F0012EE7A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AFDE01011CCED38F0012EE7A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AFDE01021CCED38F0012EE7A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AFDE01031CCED38F0012EE7A</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>AFDE01131CCED38F0012EE7A</string>
+			<key>buildPhases</key>
+			<array>
+				<string>AFDE01001CCED38F0012EE7A</string>
+				<string>AFDE01011CCED38F0012EE7A</string>
+				<string>AFDE01021CCED38F0012EE7A</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>AFDE01061CCED38F0012EE7A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>wetharUITests</string>
+			<key>productName</key>
+			<string>wetharUITests</string>
+			<key>productReference</key>
+			<string>AFDE01041CCED38F0012EE7A</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.ui-testing</string>
+		</dict>
+		<key>AFDE01041CCED38F0012EE7A</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>wetharUITests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>AFDE01051CCED38F0012EE7A</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>AFDE00D81CCED38F0012EE7A</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>AFDE00DF1CCED38F0012EE7A</string>
+			<key>remoteInfo</key>
+			<string>wethar</string>
+		</dict>
+		<key>AFDE01061CCED38F0012EE7A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>AFDE00DF1CCED38F0012EE7A</string>
+			<key>targetProxy</key>
+			<string>AFDE01051CCED38F0012EE7A</string>
+		</dict>
+		<key>AFDE01071CCED38F0012EE7A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AFDE01081CCED38F0012EE7A</string>
+				<string>AFDE010A1CCED38F0012EE7A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>wetharUITests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE01081CCED38F0012EE7A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>wetharUITests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE01091CCED38F0012EE7A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AFDE01081CCED38F0012EE7A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AFDE010A1CCED38F0012EE7A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE010B1CCED38F0012EE7A</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>AFDE010C1CCED38F0012EE7A</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>AFDE010D1CCED38F0012EE7A</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>AFDE010E1CCED38F0012EE7A</string>
+				<string>AFDE010F1CCED38F0012EE7A</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>AFDE010E1CCED38F0012EE7A</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>F7575D897FF9E4C44D1AB7F7</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>INFOPLIST_FILE</key>
+				<string>wethar/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>chance.wethar</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>AFDE010F1CCED38F0012EE7A</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>AD5C9E823125B120AD959057</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>INFOPLIST_FILE</key>
+				<string>wethar/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>chance.wethar</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>AFDE01101CCED38F0012EE7A</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>AFDE01111CCED38F0012EE7A</string>
+				<string>AFDE01121CCED38F0012EE7A</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>AFDE01111CCED38F0012EE7A</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>INFOPLIST_FILE</key>
+				<string>wetharTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>chance.wetharTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/wethar.app/wethar</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>AFDE01121CCED38F0012EE7A</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>INFOPLIST_FILE</key>
+				<string>wetharTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>chance.wetharTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/wethar.app/wethar</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>AFDE01131CCED38F0012EE7A</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>AFDE01141CCED38F0012EE7A</string>
+				<string>AFDE01151CCED38F0012EE7A</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>AFDE01141CCED38F0012EE7A</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>wetharUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>chance.wetharUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>wethar</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>AFDE01151CCED38F0012EE7A</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>wetharUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>chance.wetharUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>wethar</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>AFDE01161CCEE18F0012EE7A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>secrets.h</string>
+			<key>path</key>
+			<string>../secrets.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE01171CCEE18F0012EE7A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>secrets.m</string>
+			<key>path</key>
+			<string>../secrets.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE01181CCEE18F0012EE7A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AFDE01171CCEE18F0012EE7A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AFDE01231CD014D10012EE7A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>flickrAPIClient.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE01241CD014D10012EE7A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>flickrAPIClient.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE01251CD014D10012EE7A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AFDE01241CD014D10012EE7A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AFDE01261CD050D20012EE7A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>wundergroundAPIClient.h</string>
+			<key>path</key>
+			<string>../wundergroundAPIClient.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE01271CD050D20012EE7A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>wundergroundAPIClient.m</string>
+			<key>path</key>
+			<string>../wundergroundAPIClient.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AFDE01281CD050D20012EE7A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AFDE01271CD050D20012EE7A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E7218F22C0B070B8423A285A</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-wethar.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>F7575D897FF9E4C44D1AB7F7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-wethar.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-wethar/Pods-wethar.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>AFDE00D81CCED38F0012EE7A</string>
+</dict>
+</plist>

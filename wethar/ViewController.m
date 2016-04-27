@@ -34,6 +34,8 @@
     [super viewDidLoad];
     
     [self getLocation];
+    
+    
 }
 
 - (void)updateTheLabelsWithWeatherDataFromCurrentLocation {
@@ -72,8 +74,6 @@
     
 }
 
-// location manager delegate methods
-
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     
     if ([error code] != kCLErrorLocationUnknown) {
@@ -103,6 +103,7 @@
         }
 
         [self updateTheLabelsWithWeatherDataFromCurrentLocation];
+        [self setImageView];
 
     }];
     
@@ -110,11 +111,19 @@
 }
 
 
--(void)selectPhoto {
+-(void)setImageView{
     
     flickrAPIClient *APIClient = [[flickrAPIClient alloc]init];
     
-    [APIClient  ]
+    [APIClient  getPhotoFromFlickrWithLatitude:self.latitude longitude:self.longitude city:self.urlCity state:self.state andCompletionBlock:^(UIImage *image){
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            
+            self.flickrImage.image = image;
+            
+        }];
+        
+    }];
   
     
 }
