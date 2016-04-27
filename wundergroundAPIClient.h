@@ -10,6 +10,12 @@
 
 @interface wundergroundAPIClient : NSObject
 
--(void)fetchWeatherDataForLocationWithCity:(NSString *)city state:(NSString *)state andCompletionBlock:(void(^)(NSDictionary*data))completionBlock;
++(void)fetchCurrentConditionsWeatherDataForLocationWithCity:(NSString *)city state:(NSString *)state andCompletionBlock:(void(^)(NSDictionary*data))completionBlock;
+
++(void)fetchTenDayWeatherForecastWithCity:(NSString *)city state:(NSString *)state andCompletionBlock:(void(^)(NSArray*data))completionBlock;
+
++(void)fetchHourlyWeatherForecastWithCity:(NSString *)city state:(NSString *)state andCompletionBlock:(void (^)(NSArray *))completionBlock;
+
++(void)fetchCurrentDayWeatherForecastWithCity:(NSString *)city state:(NSString *)state andCompletionBlock:(void (^)(NSArray *))completionBlock;
 
 @end

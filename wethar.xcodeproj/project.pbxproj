@@ -20,6 +20,12 @@
 		AFDE01251CD014D10012EE7A /* flickrAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01241CD014D10012EE7A /* flickrAPIClient.m */; };
 		AFDE01281CD050D20012EE7A /* wundergroundAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01271CD050D20012EE7A /* wundergroundAPIClient.m */; };
 		AFDE012B1CD10B400012EE7A /* DVSDatastore.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE012A1CD10B400012EE7A /* DVSDatastore.m */; };
+		AFDE01331CD120FA0012EE7A /* DVSTenDayWeatherForcast.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01321CD120FA0012EE7A /* DVSTenDayWeatherForcast.m */; };
+		AFDE01361CD121450012EE7A /* DVSTenDayWeatherForcast.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFDE01351CD121450012EE7A /* DVSTenDayWeatherForcast.xib */; };
+		AFDE01391CD125E50012EE7A /* DVSTenDayWeatherDay.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01381CD125E50012EE7A /* DVSTenDayWeatherDay.m */; };
+		AFDE013D1CD130270012EE7A /* DVSCurrentDay.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE013C1CD130270012EE7A /* DVSCurrentDay.m */; };
+		AFDE01401CD1326B0012EE7A /* DVSHourlyForcastHour.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE013F1CD1326B0012EE7A /* DVSHourlyForcastHour.m */; };
+		AFDE01431CD1508F0012EE7A /* DVSCurrentForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01421CD1508F0012EE7A /* DVSCurrentForecast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,17 @@
 		AFDE01271CD050D20012EE7A /* wundergroundAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = wundergroundAPIClient.m; path = ../wundergroundAPIClient.m; sourceTree = "<group>"; };
 		AFDE01291CD10B400012EE7A /* DVSDatastore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSDatastore.h; sourceTree = "<group>"; };
 		AFDE012A1CD10B400012EE7A /* DVSDatastore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSDatastore.m; sourceTree = "<group>"; };
+		AFDE01311CD120FA0012EE7A /* DVSTenDayWeatherForcast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSTenDayWeatherForcast.h; sourceTree = "<group>"; };
+		AFDE01321CD120FA0012EE7A /* DVSTenDayWeatherForcast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSTenDayWeatherForcast.m; sourceTree = "<group>"; };
+		AFDE01351CD121450012EE7A /* DVSTenDayWeatherForcast.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DVSTenDayWeatherForcast.xib; sourceTree = "<group>"; };
+		AFDE01371CD125E50012EE7A /* DVSTenDayWeatherDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSTenDayWeatherDay.h; sourceTree = "<group>"; };
+		AFDE01381CD125E50012EE7A /* DVSTenDayWeatherDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSTenDayWeatherDay.m; sourceTree = "<group>"; };
+		AFDE013B1CD130270012EE7A /* DVSCurrentDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSCurrentDay.h; sourceTree = "<group>"; };
+		AFDE013C1CD130270012EE7A /* DVSCurrentDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSCurrentDay.m; sourceTree = "<group>"; };
+		AFDE013E1CD1326B0012EE7A /* DVSHourlyForcastHour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSHourlyForcastHour.h; sourceTree = "<group>"; };
+		AFDE013F1CD1326B0012EE7A /* DVSHourlyForcastHour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSHourlyForcastHour.m; sourceTree = "<group>"; };
+		AFDE01411CD1508F0012EE7A /* DVSCurrentForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSCurrentForecast.h; sourceTree = "<group>"; };
+		AFDE01421CD1508F0012EE7A /* DVSCurrentForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSCurrentForecast.m; sourceTree = "<group>"; };
 		E7218F22C0B070B8423A285A /* libPods-wethar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wethar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7575D897FF9E4C44D1AB7F7 /* Pods-wethar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wethar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wethar/Pods-wethar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,15 +156,16 @@
 			children = (
 				AFDE01161CCEE18F0012EE7A /* secrets.h */,
 				AFDE01171CCEE18F0012EE7A /* secrets.m */,
+				AFDE01291CD10B400012EE7A /* DVSDatastore.h */,
+				AFDE012A1CD10B400012EE7A /* DVSDatastore.m */,
 				AFDE00E61CCED38F0012EE7A /* AppDelegate.h */,
 				AFDE00E71CCED38F0012EE7A /* AppDelegate.m */,
 				AFDE00E91CCED38F0012EE7A /* ViewController.h */,
 				AFDE00EA1CCED38F0012EE7A /* ViewController.m */,
-				AFDE01301CD1186F0012EE7A /* ModelClasses */,
-				AFDE012C1CD117BE0012EE7A /* APIClients */,
-				AFDE01291CD10B400012EE7A /* DVSDatastore.h */,
-				AFDE012A1CD10B400012EE7A /* DVSDatastore.m */,
 				AFDE00EC1CCED38F0012EE7A /* Main.storyboard */,
+				AFDE013A1CD125ED0012EE7A /* ModelClasses */,
+				AFDE012C1CD117BE0012EE7A /* APIClients */,
+				AFDE01341CD1210B0012EE7A /* CustomViews */,
 				AFDE00EF1CCED38F0012EE7A /* Assets.xcassets */,
 				AFDE00F11CCED38F0012EE7A /* LaunchScreen.storyboard */,
 				AFDE00F41CCED38F0012EE7A /* Info.plist */,
@@ -193,9 +211,27 @@
 			name = APIClients;
 			sourceTree = "<group>";
 		};
-		AFDE01301CD1186F0012EE7A /* ModelClasses */ = {
+		AFDE01341CD1210B0012EE7A /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				AFDE01311CD120FA0012EE7A /* DVSTenDayWeatherForcast.h */,
+				AFDE01321CD120FA0012EE7A /* DVSTenDayWeatherForcast.m */,
+				AFDE01351CD121450012EE7A /* DVSTenDayWeatherForcast.xib */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		AFDE013A1CD125ED0012EE7A /* ModelClasses */ = {
+			isa = PBXGroup;
+			children = (
+				AFDE01411CD1508F0012EE7A /* DVSCurrentForecast.h */,
+				AFDE01421CD1508F0012EE7A /* DVSCurrentForecast.m */,
+				AFDE013E1CD1326B0012EE7A /* DVSHourlyForcastHour.h */,
+				AFDE013F1CD1326B0012EE7A /* DVSHourlyForcastHour.m */,
+				AFDE013B1CD130270012EE7A /* DVSCurrentDay.h */,
+				AFDE013C1CD130270012EE7A /* DVSCurrentDay.m */,
+				AFDE01371CD125E50012EE7A /* DVSTenDayWeatherDay.h */,
+				AFDE01381CD125E50012EE7A /* DVSTenDayWeatherDay.m */,
 			);
 			name = ModelClasses;
 			sourceTree = "<group>";
@@ -309,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFDE01361CD121450012EE7A /* DVSTenDayWeatherForcast.xib in Resources */,
 				AFDE00F31CCED38F0012EE7A /* LaunchScreen.storyboard in Resources */,
 				AFDE00F01CCED38F0012EE7A /* Assets.xcassets in Resources */,
 				AFDE00EE1CCED38F0012EE7A /* Main.storyboard in Resources */,
@@ -384,13 +421,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFDE01331CD120FA0012EE7A /* DVSTenDayWeatherForcast.m in Sources */,
 				AFDE00EB1CCED38F0012EE7A /* ViewController.m in Sources */,
+				AFDE01431CD1508F0012EE7A /* DVSCurrentForecast.m in Sources */,
+				AFDE01401CD1326B0012EE7A /* DVSHourlyForcastHour.m in Sources */,
 				AFDE01181CCEE18F0012EE7A /* secrets.m in Sources */,
 				AFDE01251CD014D10012EE7A /* flickrAPIClient.m in Sources */,
 				AFDE012B1CD10B400012EE7A /* DVSDatastore.m in Sources */,
 				AFDE00E81CCED38F0012EE7A /* AppDelegate.m in Sources */,
 				AFDE00E51CCED38F0012EE7A /* main.m in Sources */,
 				AFDE01281CD050D20012EE7A /* wundergroundAPIClient.m in Sources */,
+				AFDE013D1CD130270012EE7A /* DVSCurrentDay.m in Sources */,
+				AFDE01391CD125E50012EE7A /* DVSTenDayWeatherDay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

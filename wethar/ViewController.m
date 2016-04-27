@@ -7,23 +7,13 @@
 //
 
 #import "ViewController.h"
-#import "secrets.h"
-#import "wundergroundAPIClient.h"
 #import "flickrAPIClient.h"
 #import <UIImageView+AFNetworking.h>
+#import "DVSDatastore.h"
 
-@import CoreLocation;
+@interface ViewController ()
 
-
-@interface ViewController () <CLLocationManagerDelegate>
-
-@property (nonatomic, strong) CLLocation *location;
-@property (nonatomic, strong) NSString *latitude;
-@property (nonatomic, strong) NSString *longitude;
-@property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) NSString *state;
-@property (nonatomic, strong) NSString *city;
-@property (nonatomic, strong) NSString *urlCity;
+@property (nonatomic, strong) DVSDatastore *sharedDatastore;
 @property (strong, nonatomic) IBOutlet UILabel *TempLabel;
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *flickrImage;
@@ -35,89 +25,82 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self getLocation];
+    self.sharedDatastore = [DVSDatastore sharedDatastore];
     
+    [self.sharedDatastore getLocation];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabelsWithWeatherDataFromCurrentLocationNotification:) name:@"locationInfoComplete" object:nil];
     
 }
 
-- (void)updateTheLabelsWithWeatherDataFromCurrentLocation {
+// SET UP VIEWS
+
+- (void)updateLabelsWithWeatherDataFromCurrentLocationNotification:(NSNotification *)notification{
     
-    wundergroundAPIClient *client = [[wundergroundAPIClient alloc]init];
+    self.locationLabel.text = [NSString stringWithFormat:@"%@, %@",self.sharedDatastore.city,self.sharedDatastore.state];
     
-    [client fetchWeatherDataForLocationWithCity:self.urlCity state:self.state andCompletionBlock:^(NSDictionary *data) {
+    [self setImageView];
+    
+    [self.sharedDatastore getHourlyForcastWithCompletion:^(BOOL isComplete) {
         
-        [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+        if(isComplete) {
             
-            self.locationLabel.text = [NSString stringWithFormat:@"%@, %@",self.state, self.city];
-            self.TempLabel.text = [NSString stringWithFormat:@"%@",data[@"current_observation"][@"temp_f"]];
-            
-        }];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                
+                
+                
+            }];
+        }
+        
     }];
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)getLocation
-{
-    self.locationManager = [[CLLocationManager alloc]init];
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
-    [self.locationManager requestWhenInUseAuthorization];
-    self.locationManager.delegate = self;
-    if ([self.locationManager respondsToSelector:@selector
-         (requestWhenInUseAuthorization)]) {
-        [self.locationManager requestWhenInUseAuthorization];
-    }
-    
-    [self.locationManager startUpdatingLocation];
-    
-}
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    
-    if ([error code] != kCLErrorLocationUnknown) {
-                [self.locationManager stopUpdatingLocation];
-    }
-}
-
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-    
-    self.location= [locations lastObject];
-    self.latitude= [NSString stringWithFormat:@"%f",self.location.coordinate.latitude];
-    self.longitude = [NSString stringWithFormat:@"%f",self.location.coordinate.longitude];
-    
-    [self.locationManager stopUpdatingLocation];
-    
-    CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
-    [geoCoder reverseGeocodeLocation:self.locationManager.location completionHandler:^(NSArray *placemarks, NSError *error) {
-        for (CLPlacemark * placemark in placemarks) {
-            self.city = [placemark locality]; // locality means "city"
-            if ([self.city containsString:@" "]) {
+    [self.sharedDatastore getTenDayForcastWithCompletion:^(BOOL isComplete) {
+        
+        if(isComplete) {
+            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 
-                self.urlCity = [self.city stringByReplacingOccurrencesOfString:@" " withString:@"_"];
-            }
-            
-            self.state = [placemark administrativeArea]; // which is "state" in the U.S.A.
-            
+                
+            }];
         }
 
-        [self updateTheLabelsWithWeatherDataFromCurrentLocation];
-        [self setImageView];
+        
+    }];
+    
+    [self.sharedDatastore getCurrentDayForcastWithCompletion:^(BOOL isComplete) {
+        
+        if(isComplete) {
+            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                
+               
+                
+            }];
+        }
 
     }];
     
-
+    [self.sharedDatastore getCurrentConditionsForcastWithCompletion:^(BOOL isComplete) {
+       
+        if(isComplete) {
+            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                
+                self.TempLabel.text = [NSString stringWithFormat:@"%.1f",self.sharedDatastore.currentConditions.currentTemp ];
+                                
+            }];
+        }
+        
+    }];
+    
+    
 }
-
 
 -(void)setImageView{
     
     flickrAPIClient *APIClient = [[flickrAPIClient alloc]init];
     
-    [APIClient  getPhotoFromFlickrWithLatitude:self.latitude longitude:self.longitude city:self.urlCity state:self.state andCompletionBlock:^(NSURL *image){
+    [APIClient  getPhotoFromFlickrWithLatitude:self.sharedDatastore.latitude longitude:self.sharedDatastore.longitude city:self.sharedDatastore.urlCity state:self.sharedDatastore.state andCompletionBlock:^(NSURL *image){
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             
@@ -128,9 +111,15 @@
         }];
         
     }];
-  
+    
     
 }
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 
 
 
