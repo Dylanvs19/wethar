@@ -12,6 +12,6 @@
 
 @interface flickrAPIClient : NSObject
 
--(void)getPhotoFromFlickrWithLatitude:(NSString *)latitude longitude:(NSString *)longitude city:(NSString *)city state:(NSString *)state andCompletionBlock:(void(^)(UIImage *))completionBlock;
+-(void)getPhotoFromFlickrWithLatitude:(NSString *)latitude longitude:(NSString *)longitude city:(NSString *)city state:(NSString *)state andCompletionBlock:(void(^)(NSURL *))completionBlock;
 
 @end

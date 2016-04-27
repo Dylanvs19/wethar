@@ -7,25 +7,34 @@
 //
 
 #import "flickrAPIClient.h"
-#import "UIImageView+AFNetworking.h"
 
 @implementation flickrAPIClient
 
 
 
--(void)getPhotoFromFlickrWithLatitude:(NSString *)latitude longitude:(NSString *)longitude city:(NSString *)city state:(NSString *)state andCompletionBlock:(void(^)(UIImage *))completionBlock {
+-(void)getPhotoFromFlickrWithLatitude:(NSString *)latitude longitude:(NSString *)longitude city:(NSString *)city state:(NSString *)state andCompletionBlock:(void(^)(NSURL *))completionBlock {
     
-    NSURL *flickerAPI = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&lat=%@&lon=-%@&accuracy=3&extras=url_c,views&format=json&tags=%@,%@",FLICKR_API_KEY,latitude,longitude,city,state]];
+    NSURL *flickerAPI = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&lat=%@&lon=%@&accuracy=3&nojsoncallback=1&extras=url_c,views&format=json&tags=%@,%@&privacy_filter=1&content_type=1,geo_context=2,is_getty=true",FLICKR_API_KEY,latitude,longitude,city,state]];
+    
+    NSLog(@"url: %@",[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&lat=%@&lon=%@&accuracy=3&extras=url_c,views&format=json&tags=%@,%@",FLICKR_API_KEY,latitude,longitude,city,state]);
     
     NSURLSession * session = [NSURLSession sharedSession];
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithURL:flickerAPI completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        NSDictionary * dataToSend = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        if (error) {
+            
+            NSLog(@"error: %@",error.description);
+            
+        }
         
+        NSLog(@"response: %@",response);
+
+        NSDictionary * dataToSend = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+
         NSArray *photosArrayFromData = dataToSend[@"photos"][@"photo"];
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"views > 100"];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"views > 10"];
         NSArray *filteredPhotos = [photosArrayFromData filteredArrayUsingPredicate:predicate];
         
         if(filteredPhotos == nil) {
@@ -43,18 +52,14 @@
                     [finalPhotoArray addObject:dict];
                 }
                 
-                
             }
             
             NSDictionary *photoDictionary = [finalPhotoArray objectAtIndex:arc4random() %finalPhotoArray.count];
             
             NSURL *url = [NSURL URLWithString:photoDictionary[@"url_c"]];
             
-            AFImageDownloader *downloader = [AFImageDownloader sharedImageDownloader];
+            completionBlock(url);
             
-            UIImage *image = [downloader setImageWithURL:url];
-            
-            completionBlock(image);
             
         }
         

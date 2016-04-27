@@ -10,6 +10,8 @@
 #import "secrets.h"
 #import "wundergroundAPIClient.h"
 #import "flickrAPIClient.h"
+#import <UIImageView+AFNetworking.h>
+
 @import CoreLocation;
 
 
@@ -115,11 +117,13 @@
     
     flickrAPIClient *APIClient = [[flickrAPIClient alloc]init];
     
-    [APIClient  getPhotoFromFlickrWithLatitude:self.latitude longitude:self.longitude city:self.urlCity state:self.state andCompletionBlock:^(UIImage *image){
+    [APIClient  getPhotoFromFlickrWithLatitude:self.latitude longitude:self.longitude city:self.urlCity state:self.state andCompletionBlock:^(NSURL *image){
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             
-            self.flickrImage.image = image;
+            [self.flickrImage setImageWithURL:image];
+            
+            NSLog(@"%@",self.flickrImage);
             
         }];
         
