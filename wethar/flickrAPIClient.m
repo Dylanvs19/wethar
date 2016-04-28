@@ -16,8 +16,6 @@
     
     NSURL *flickerAPI = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&lat=%@&lon=%@&accuracy=3&nojsoncallback=1&extras=url_c,views&format=json&tags=%@,%@&privacy_filter=1&content_type=1,geo_context=2,is_getty=true",FLICKR_API_KEY,latitude,longitude,city,state]];
     
-    NSLog(@"url: %@",[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&lat=%@&lon=%@&accuracy=3&extras=url_c,views&format=json&tags=%@,%@",FLICKR_API_KEY,latitude,longitude,city,state]);
-    
     NSURLSession * session = [NSURLSession sharedSession];
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithURL:flickerAPI completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -28,8 +26,6 @@
             
         }
         
-        NSLog(@"response: %@",response);
-
         NSDictionary * dataToSend = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 
         NSArray *photosArrayFromData = dataToSend[@"photos"][@"photo"];
@@ -39,7 +35,7 @@
         
         if(filteredPhotos == nil) {
             
-            // add weird photo in xcassets
+            // Need to add weird photo in xcassets
             
         } else {
             

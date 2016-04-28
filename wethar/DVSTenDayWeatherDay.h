@@ -14,8 +14,8 @@
 
 @property (nonatomic, strong)UIImageView *icon;
 @property (nonatomic, strong)NSString *condition;
-@property (nonatomic, strong)NSString *highTemp;
-@property (nonatomic, strong)NSString *lowTemp;
+@property (nonatomic) CGFloat highTemp;
+@property (nonatomic) CGFloat lowTemp;
 @property (nonatomic, strong)NSDate *date;
 @property (nonatomic, strong)NSString *weekday;
 

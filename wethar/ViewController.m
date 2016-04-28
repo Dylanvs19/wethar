@@ -10,7 +10,7 @@
 #import "flickrAPIClient.h"
 #import <UIImageView+AFNetworking.h>
 #import "DVSDatastore.h"
-
+  
 @interface ViewController ()
 
 @property (nonatomic, strong) DVSDatastore *sharedDatastore;
@@ -47,7 +47,7 @@
             
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 
-                
+//                NSLog(@"hourlyWeatherForecast: %@", self.sharedDatastore.hourlyWeatherForecast);
                 
             }];
         }
@@ -61,6 +61,8 @@
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 
                 
+//                NSLog(@"tenDayWeatherForecast: %@", self.sharedDatastore.tenDayWeatherForecast);
+
             }];
         }
 
@@ -73,8 +75,8 @@
             
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 
-               
-                
+//                NSLog(@"currentDayWeatherForecast: %@", self.sharedDatastore.currentDay);
+
             }];
         }
 
@@ -105,9 +107,7 @@
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             
             [self.flickrImage setImageWithURL:image];
-            
-            NSLog(@"%@",self.flickrImage);
-            
+                        
         }];
         
     }];

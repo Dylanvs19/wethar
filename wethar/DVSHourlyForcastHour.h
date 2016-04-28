@@ -12,7 +12,7 @@
 
 @interface DVSHourlyForcastHour : NSObject
 
-@property (nonatomic, strong)NSString *temp;
+@property (nonatomic)CGFloat temp;
 @property (nonatomic, strong)UIImageView *hourIcon;
 @property (nonatomic, strong)NSString *hour;
 @property (nonatomic, strong)NSString *conditions;

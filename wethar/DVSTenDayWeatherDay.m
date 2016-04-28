@@ -14,16 +14,16 @@
     
     DVSTenDayWeatherDay *finalDay = [[DVSTenDayWeatherDay alloc]init];
     
-    finalDay.highTemp = dictionary[@"high"][@"fahrenheit"];
-    finalDay.lowTemp = dictionary[@"low"][@"fahrenheit"];
+    finalDay.highTemp = [dictionary[@"high"][@"fahrenheit"]floatValue];
+    finalDay.lowTemp = [dictionary[@"low"][@"fahrenheit"]floatValue];
     finalDay.condition = dictionary[@"conditions"];
     finalDay.icon = nil;
     finalDay.weekday = dictionary[@"date"][@"weekday"];
     
     NSDateComponents *dateComponents = [[NSDateComponents alloc]init];
-    dateComponents.day = dictionary[@"date"][@"day"];
-    dateComponents.month = dictionary[@"date"][@"month"];
-    dateComponents.year = dictionary[@"date"][@"year"];
+    dateComponents.day = [dictionary[@"date"][@"day"]integerValue];
+    dateComponents.month = [dictionary[@"date"][@"month"]integerValue];
+    dateComponents.year = [dictionary[@"date"][@"year"] integerValue];
     
     finalDay.date = [[NSCalendar currentCalendar]dateFromComponents:dateComponents];
     

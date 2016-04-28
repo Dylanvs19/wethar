@@ -1,25 +1,20 @@
 //
-//  DVSTenDayWeatherForcast.m
+//  DVSMainView.m
 //  wethar
 //
 //  Created by Dylan Straughan on 4/27/16.
 //  Copyright © 2016 Dylan Straughan. All rights reserved.
 //
 
-#import "DVSTenDayWeatherForcast.h"
+#import "DVSMainView.h"
 
-@interface DVSTenDayWeatherForcast ()
+@interface DVSMainView ()
 
 @property (strong, nonatomic) IBOutlet UIView *contentView;
-@property (strong, nonatomic) IBOutlet UIImageView *conditionImageView;
-@property (strong, nonatomic) IBOutlet UILabel *dayLabel;
-@property (strong, nonatomic) IBOutlet UILabel *lowTempLabel;
-@property (strong, nonatomic) IBOutlet UILabel *highTempLabel;
 
 @end
 
-@implementation DVSTenDayWeatherForcast
-
+@implementation DVSMainView
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder {
     
@@ -47,8 +42,8 @@
 }
 
 -(void)commonInit{
- 
-    [[NSBundle mainBundle] loadNibNamed:@"DVSTenDayWeatherForecast" owner:self options:nil];
+    
+    [[NSBundle mainBundle] loadNibNamed:@"DVSMainView" owner:self options:nil];
     
     [self addSubview:self.contentView];
     
@@ -60,24 +55,12 @@
     
 }
 
--(void)setDay:(DVSTenDayWeatherDay *)day{
+-(void)awakeFromNib {
     
-    _day = day;
     
-    [self setupDay];
     
 }
 
--(void)setupDay {
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"EEE, MMM d"];
-    
-    self.dayLabel.text = [dateFormatter stringFromDate:self.day.date];
-    self.highTempLabel.text = [NSString stringWithFormat:@"%.1f°",self.day.highTemp];
-    self.lowTempLabel.text = [NSString stringWithFormat:@"%.1f°",self.day.lowTemp];
-
-}
 
 
 

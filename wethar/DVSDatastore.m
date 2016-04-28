@@ -91,7 +91,7 @@
 
 -(void)getHourlyForcastWithCompletion:(void(^)(BOOL))completionBlock{
     
-    self.tenDayWeatherForecast = [[NSMutableArray alloc]init];
+    self.hourlyWeatherForecast = [[NSMutableArray alloc]init];
     
     [wundergroundAPIClient fetchHourlyWeatherForecastWithCity:self.urlCity state:self.state andCompletionBlock:^(NSArray *data) {
         
@@ -99,7 +99,7 @@
         
         for (NSDictionary *day in data) {
             
-            [self.tenDayWeatherForecast addObject:[DVSTenDayWeatherDay createDVSTenDayWeatherDayFromDictionary:day]];
+            [self.hourlyWeatherForecast addObject:[DVSHourlyForcastHour createDVSHourlyForcastHourFromDictionary:day]];
             
             count--;
         }

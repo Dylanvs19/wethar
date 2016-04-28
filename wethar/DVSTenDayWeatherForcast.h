@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DVSTenDayWeatherDay.h"
 
 @interface DVSTenDayWeatherForcast : UIView
+
+@property (nonatomic, strong)DVSTenDayWeatherDay *day;
 
 @end

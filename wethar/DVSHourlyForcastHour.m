@@ -15,7 +15,7 @@
     DVSHourlyForcastHour *finalHour = [[DVSHourlyForcastHour alloc]init];
     
     finalHour.hour = dictionary[@"FCTTIME"][@"civil"];
-    finalHour.temp = dictionary[@"FCTTIME"][@"temp"][@"english"];
+    finalHour.temp = [dictionary[@"FCTTIME"][@"temp"][@"english"]floatValue];
     finalHour.conditions = dictionary[@"FCTTIME"][@"condition"];
     finalHour.hourIcon = nil;
     

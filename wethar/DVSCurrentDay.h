@@ -13,8 +13,8 @@
 @interface DVSCurrentDay : NSObject
 
 @property (nonatomic, strong)NSDate *date;
-@property (nonatomic, strong)NSString *highTemp;
-@property (nonatomic, strong)NSString *lowTemp;
+@property (nonatomic) CGFloat highTemp;
+@property (nonatomic) CGFloat lowTemp;
 @property (nonatomic, strong)UIImageView *dayIcon;
 @property (nonatomic, strong)NSString *dayCondition;
 

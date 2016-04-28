@@ -26,6 +26,12 @@
 		AFDE013D1CD130270012EE7A /* DVSCurrentDay.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE013C1CD130270012EE7A /* DVSCurrentDay.m */; };
 		AFDE01401CD1326B0012EE7A /* DVSHourlyForcastHour.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE013F1CD1326B0012EE7A /* DVSHourlyForcastHour.m */; };
 		AFDE01431CD1508F0012EE7A /* DVSCurrentForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01421CD1508F0012EE7A /* DVSCurrentForecast.m */; };
+		AFDE014B1CD1829A0012EE7A /* DVSMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFDE014A1CD1829A0012EE7A /* DVSMainView.xib */; };
+		AFDE014D1CD182A60012EE7A /* DVSNextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFDE014C1CD182A60012EE7A /* DVSNextView.xib */; };
+		AFDE01501CD1833D0012EE7A /* DVSMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE014F1CD1833D0012EE7A /* DVSMainView.m */; };
+		AFDE01531CD1834C0012EE7A /* DVSNextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01521CD1834C0012EE7A /* DVSNextView.m */; };
+		AFDE01551CD189260012EE7A /* UpArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AFDE01541CD189260012EE7A /* UpArrow.png */; };
+		AFDE01581CD1895A0012EE7A /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AFDE01571CD1895A0012EE7A /* downArrow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +88,14 @@
 		AFDE013F1CD1326B0012EE7A /* DVSHourlyForcastHour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSHourlyForcastHour.m; sourceTree = "<group>"; };
 		AFDE01411CD1508F0012EE7A /* DVSCurrentForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSCurrentForecast.h; sourceTree = "<group>"; };
 		AFDE01421CD1508F0012EE7A /* DVSCurrentForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSCurrentForecast.m; sourceTree = "<group>"; };
+		AFDE014A1CD1829A0012EE7A /* DVSMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DVSMainView.xib; sourceTree = "<group>"; };
+		AFDE014C1CD182A60012EE7A /* DVSNextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DVSNextView.xib; sourceTree = "<group>"; };
+		AFDE014E1CD1833D0012EE7A /* DVSMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSMainView.h; sourceTree = "<group>"; };
+		AFDE014F1CD1833D0012EE7A /* DVSMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSMainView.m; sourceTree = "<group>"; };
+		AFDE01511CD1834C0012EE7A /* DVSNextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSNextView.h; sourceTree = "<group>"; };
+		AFDE01521CD1834C0012EE7A /* DVSNextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSNextView.m; sourceTree = "<group>"; };
+		AFDE01541CD189260012EE7A /* UpArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UpArrow.png; path = ../../../../Desktop/UpArrow.png; sourceTree = "<group>"; };
+		AFDE01571CD1895A0012EE7A /* downArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = downArrow.png; path = ../../../../Desktop/downArrow.png; sourceTree = "<group>"; };
 		E7218F22C0B070B8423A285A /* libPods-wethar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wethar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7575D897FF9E4C44D1AB7F7 /* Pods-wethar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wethar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wethar/Pods-wethar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,6 +231,13 @@
 				AFDE01311CD120FA0012EE7A /* DVSTenDayWeatherForcast.h */,
 				AFDE01321CD120FA0012EE7A /* DVSTenDayWeatherForcast.m */,
 				AFDE01351CD121450012EE7A /* DVSTenDayWeatherForcast.xib */,
+				AFDE014E1CD1833D0012EE7A /* DVSMainView.h */,
+				AFDE014F1CD1833D0012EE7A /* DVSMainView.m */,
+				AFDE014A1CD1829A0012EE7A /* DVSMainView.xib */,
+				AFDE01511CD1834C0012EE7A /* DVSNextView.h */,
+				AFDE01521CD1834C0012EE7A /* DVSNextView.m */,
+				AFDE014C1CD182A60012EE7A /* DVSNextView.xib */,
+				AFDE01561CD1892F0012EE7A /* Images */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -234,6 +255,15 @@
 				AFDE01381CD125E50012EE7A /* DVSTenDayWeatherDay.m */,
 			);
 			name = ModelClasses;
+			sourceTree = "<group>";
+		};
+		AFDE01561CD1892F0012EE7A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AFDE01541CD189260012EE7A /* UpArrow.png */,
+				AFDE01571CD1895A0012EE7A /* downArrow.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,8 +377,12 @@
 			files = (
 				AFDE01361CD121450012EE7A /* DVSTenDayWeatherForcast.xib in Resources */,
 				AFDE00F31CCED38F0012EE7A /* LaunchScreen.storyboard in Resources */,
+				AFDE01551CD189260012EE7A /* UpArrow.png in Resources */,
+				AFDE01581CD1895A0012EE7A /* downArrow.png in Resources */,
 				AFDE00F01CCED38F0012EE7A /* Assets.xcassets in Resources */,
+				AFDE014D1CD182A60012EE7A /* DVSNextView.xib in Resources */,
 				AFDE00EE1CCED38F0012EE7A /* Main.storyboard in Resources */,
+				AFDE014B1CD1829A0012EE7A /* DVSMainView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,8 +465,10 @@
 				AFDE00E81CCED38F0012EE7A /* AppDelegate.m in Sources */,
 				AFDE00E51CCED38F0012EE7A /* main.m in Sources */,
 				AFDE01281CD050D20012EE7A /* wundergroundAPIClient.m in Sources */,
+				AFDE01501CD1833D0012EE7A /* DVSMainView.m in Sources */,
 				AFDE013D1CD130270012EE7A /* DVSCurrentDay.m in Sources */,
 				AFDE01391CD125E50012EE7A /* DVSTenDayWeatherDay.m in Sources */,
+				AFDE01531CD1834C0012EE7A /* DVSNextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

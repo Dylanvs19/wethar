@@ -18,7 +18,7 @@
 @interface DVSDatastore : NSObject
 
 @property (nonatomic, strong)NSMutableArray *tenDayWeatherForecast;
-@property (nonatomic, strong)NSArray *hourlyWeatherForecast;
+@property (nonatomic, strong)NSMutableArray *hourlyWeatherForecast;
 @property (nonatomic, strong)DVSCurrentDay *currentDay;
 @property (nonatomic, strong)DVSCurrentForecast *currentConditions;
 @property (nonatomic, strong) NSString *latitude;
