@@ -6,15 +6,24 @@
 //  Copyright © 2016 Dylan Straughan. All rights reserved.
 //
 
-#import "MainViewDayForecastView.h"
+#import "DVSMainViewDayForecastView.h"
+#import "DVSDatastore.h"
 
-@interface MainViewDayForecastView  ()
+@interface DVSMainViewDayForecastView  ()
+
+@property (strong, nonatomic) IBOutlet UIView *contentView;
+@property (strong, nonatomic) IBOutlet UIImageView *dayConditionIcon;
+@property (strong, nonatomic) IBOutlet UILabel *highTempLabel;
+@property (strong, nonatomic) IBOutlet UILabel *lowTempLabel;
+@property (strong, nonatomic) IBOutlet UILabel *currentConditionLabel;
+@property (nonatomic, strong) DVSDatastore *sharedDatastore;
+
 
 @end
 
-@implementation MainViewDayForecastView
+@implementation DVSMainViewDayForecastView
 
-(instancetype)initWithCoder:(NSCoder *)aDecoder {
+-(instancetype)initWithCoder:(NSCoder *)aDecoder {
     
     self = [super initWithCoder:aDecoder];
     
@@ -41,7 +50,7 @@
 
 -(void)commonInit{
     
-    [[NSBundle mainBundle] loadNibNamed:@"DVSNextView" owner:self options:nil];
+    [[NSBundle mainBundle] loadNibNamed:@"DVSMainViewDayForecastView" owner:self options:nil];
     
     [self addSubview:self.contentView];
     
@@ -53,12 +62,27 @@
     
 }
 
--(void)setArrayOfDays:(NSArray *)arrayOfDays {
+-(void)setCurrentForecast:(DVSCurrentForecast *)currentForecast {
     
-    _arrayOfDays = arrayOfDays;
+    _currentForecast = currentForecast;
     
+    //this is just for the current icon. 
     
-    [self setupDays];
 }
+
+-(void)setDayForecast:(DVSCurrentDay *)dayForecast {
+    
+    _dayForecast = dayForecast;
+    
+    self.highTempLabel.text = [NSString stringWithFormat:@"%li°",(NSInteger)self.dayForecast.highTemp];
+    self.lowTempLabel.text = [NSString stringWithFormat:@"%li°",(NSInteger)self.dayForecast.lowTemp];
+
+    
+}
+
+
+
+
+
 
 @end

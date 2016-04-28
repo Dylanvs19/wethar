@@ -7,10 +7,15 @@
 //
 
 #import "DVSMainView.h"
+#import "DVSMainViewDayForecastView.h"
+#import "DVSDatastore.h"
 
-@interface DVSMainView ()
+@interface DVSMainView () <UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *contentView;
+@property (strong, nonatomic) IBOutlet UILabel *currentTempLabel;
+@property (strong, nonatomic) IBOutlet DVSMainViewDayForecastView *mainViewForecastView;
+@property (nonatomic, strong) DVSDatastore *sharedDatastore;
 
 @end
 
@@ -53,15 +58,49 @@
     [self.contentView.rightAnchor constraintEqualToAnchor:self.rightAnchor].active = YES;
     [self.contentView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
     
-}
-
--(void)awakeFromNib {
-    
-    
+    UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longpressGestureRecognizerPressed:)];
+    [self.contentView addGestureRecognizer:longPressGestureRecognizer];
     
 }
 
+-(void)setHourlyForecast:(NSArray *)hourlyForecast {
+    
+    _hourlyForecast = hourlyForecast;
+    
+    
+}
 
+-(void)setCurrentForecast:(DVSCurrentForecast *)currentForecast {
+    
+    _currentForecast = currentForecast;
+    
+    self.currentTempLabel.text = [NSString stringWithFormat:@"%li°",(NSInteger)self.currentForecast.currentTemp];
+    self.mainViewForecastView.currentForecast = self.currentForecast;
+    
+}
 
+-(void)setCurrentDayForecast:(DVSCurrentDay *)currentDayForecast {
+    
+    _currentDayForecast = currentDayForecast;
+    
+    self.mainViewForecastView.dayForecast = self.currentDayForecast;
+    
+}
+
+-(void)longpressGestureRecognizerPressed:(UILongPressGestureRecognizer*)gesture {
+    
+    if(gesture.state == UIGestureRecognizerStateBegan){
+        
+            [self.delegate longPressIsOccuring:YES];
+        com
+    }
+    
+    if(gesture.state == UIGestureRecognizerStateEnded){
+        
+        [self.delegate longPressIsOccuring:NO];
+
+    }
+    
+}
 
 @end

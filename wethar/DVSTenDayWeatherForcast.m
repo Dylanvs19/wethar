@@ -48,7 +48,7 @@
 
 -(void)commonInit{
  
-    [[NSBundle mainBundle] loadNibNamed:@"DVSTenDayWeatherForecast" owner:self options:nil];
+    [[NSBundle mainBundle] loadNibNamed:@"DVSTenDayWeatherForcast" owner:self options:nil];
     
     [self addSubview:self.contentView];
     
@@ -74,8 +74,8 @@
     [dateFormatter setDateFormat:@"EEE, MMM d"];
     
     self.dayLabel.text = [dateFormatter stringFromDate:self.day.date];
-    self.highTempLabel.text = [NSString stringWithFormat:@"%.1f°",self.day.highTemp];
-    self.lowTempLabel.text = [NSString stringWithFormat:@"%.1f°",self.day.lowTemp];
+    self.highTempLabel.text = [NSString stringWithFormat:@"%li°",(NSInteger)self.day.highTemp];
+    self.lowTempLabel.text = [NSString stringWithFormat:@"%li°",(NSInteger)self.day.lowTemp];
 
 }
 

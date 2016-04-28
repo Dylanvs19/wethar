@@ -10,13 +10,19 @@
 #import "flickrAPIClient.h"
 #import <UIImageView+AFNetworking.h>
 #import "DVSDatastore.h"
+#import "DVSMainView.h"
+#import "DVSNextView.h"
   
-@interface ViewController ()
+@interface ViewController () <DVSMainViewDelegate>
 
 @property (nonatomic, strong) DVSDatastore *sharedDatastore;
-@property (strong, nonatomic) IBOutlet UILabel *TempLabel;
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *flickrImage;
+@property (strong, nonatomic) IBOutlet DVSMainView *mainView;
+@property (strong, nonatomic) IBOutlet DVSNextView *nextView;
+@property (strong, nonatomic) IBOutlet UIVisualEffectView *blurView;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *blurViewCenterYON;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *blurViewCenterYOFF;
 
 @end
 
@@ -31,6 +37,10 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabelsWithWeatherDataFromCurrentLocationNotification:) name:@"locationInfoComplete" object:nil];
     
+    self.blurView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.blurViewCenterYOFF.constant = -self.view.frame.size.height;
+    self.blurViewCenterYON.active = NO;
+    self.blurViewCenterYOFF.active = YES;
 }
 
 // SET UP VIEWS
@@ -48,6 +58,7 @@
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 
 //                NSLog(@"hourlyWeatherForecast: %@", self.sharedDatastore.hourlyWeatherForecast);
+                self.mainView.hourlyForecast = self.sharedDatastore.hourlyWeatherForecast;
                 
             }];
         }
@@ -60,8 +71,9 @@
             
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 
-                
 //                NSLog(@"tenDayWeatherForecast: %@", self.sharedDatastore.tenDayWeatherForecast);
+                
+                self.nextView.arrayOfDays = self.sharedDatastore.tenDayWeatherForecast;
 
             }];
         }
@@ -76,7 +88,8 @@
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 
 //                NSLog(@"currentDayWeatherForecast: %@", self.sharedDatastore.currentDay);
-
+                self.mainView.currentDayForecast = self.sharedDatastore.currentDay;
+                
             }];
         }
 
@@ -87,14 +100,12 @@
         if(isComplete) {
             
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                
-                self.TempLabel.text = [NSString stringWithFormat:@"%.1f",self.sharedDatastore.currentConditions.currentTemp ];
+                self.mainView.currentForecast = self.sharedDatastore.currentConditions;
                                 
             }];
         }
         
     }];
-    
     
 }
 
@@ -112,7 +123,6 @@
         
     }];
     
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -120,7 +130,34 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+-(void)longPressIsOccuring:(BOOL)ocurring {
+    
+    if (ocurring) {
+        
+        [UIView animateWithDuration:.05 animations:^{
+           
+            self.blurViewCenterYON.active = YES;
+            self.blurViewCenterYOFF.active = NO;
+            
+            [self.view layoutIfNeeded];
+            
+        }];
+        
+        
+    } else {
+        
+        [UIView animateWithDuration:.05 animations:^{
+            
+            self.blurViewCenterYON.active = NO;
+            self.blurViewCenterYOFF.active = YES;
+            
+            [self.view layoutIfNeeded];
+            
+        }];
+        
+    }
+    
+}
 
 
 @end

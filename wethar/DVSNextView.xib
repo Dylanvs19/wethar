@@ -26,53 +26,42 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="s1J-EA-eei">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="s1J-EA-eei">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oop-gB-uED" userLabel="Day1" customClass="DVSTenDayWeatherForcast">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="57"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rc-HD-F4L" userLabel="Day2" customClass="DVSTenDayWeatherForcast">
-                            <rect key="frame" x="0.0" y="60" width="600" height="60"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="0.0" y="60" width="600" height="58"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlt-fe-cqq" userLabel="Day3" customClass="DVSTenDayWeatherForcast">
-                            <rect key="frame" x="0.0" y="120" width="600" height="60"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="0.0" y="121" width="600" height="57"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiy-Ww-XmZ" userLabel="Day4" customClass="DVSTenDayWeatherForcast">
-                            <rect key="frame" x="0.0" y="180" width="600" height="60"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="0.0" y="181" width="600" height="57"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJl-jY-EEO" userLabel="Day5" customClass="DVSTenDayWeatherForcast">
-                            <rect key="frame" x="0.0" y="240" width="600" height="60"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="0.0" y="241" width="600" height="58"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18f-vS-Uju" userLabel="Day6" customClass="DVSTenDayWeatherForcast">
-                            <rect key="frame" x="0.0" y="300" width="600" height="60"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="0.0" y="302" width="600" height="57"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOG-XG-7xW" userLabel="Day7" customClass="DVSTenDayWeatherForcast">
-                            <rect key="frame" x="0.0" y="360" width="600" height="60"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="0.0" y="362" width="600" height="57"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NxB-wq-88X" userLabel="Day8" customClass="DVSTenDayWeatherForcast">
-                            <rect key="frame" x="0.0" y="420" width="600" height="60"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="0.0" y="422" width="600" height="57"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAH-KY-Pme" userLabel="Day9" customClass="DVSTenDayWeatherForcast">
-                            <rect key="frame" x="0.0" y="480" width="600" height="60"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="0.0" y="482" width="600" height="58"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ow7-qz-Miv" userLabel="Day10" customClass="DVSTenDayWeatherForcast">
-                            <rect key="frame" x="0.0" y="540" width="600" height="60"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="0.0" y="543" width="600" height="57"/>
                         </view>
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="s1J-EA-eei" secondAttribute="trailing" id="Etl-xn-edS"/>
                 <constraint firstAttribute="bottom" secondItem="s1J-EA-eei" secondAttribute="bottom" id="OJY-tI-UKO"/>

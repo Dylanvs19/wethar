@@ -3,18 +3,43 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DVSMainView">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="JT9-iR-N2n"/>
+                <outlet property="currentTempLabel" destination="SRU-eq-52E" id="7FH-M3-vpd"/>
+                <outlet property="mainViewForecastView" destination="KEh-xq-ywv" id="bcl-p1-lUT"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="contentView">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRU-eq-52E">
+                    <rect key="frame" x="8" y="472" width="300" height="120"/>
+                    <color key="tintColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="99"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEh-xq-ywv" customClass="DVSMainViewDayForecastView">
+                    <rect key="frame" x="8" y="412" width="300" height="60"/>
+                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="SRU-eq-52E" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Gkn-lS-zxy"/>
+                <constraint firstItem="SRU-eq-52E" firstAttribute="top" secondItem="KEh-xq-ywv" secondAttribute="bottom" id="I04-GI-4do"/>
+                <constraint firstItem="KEh-xq-ywv" firstAttribute="height" secondItem="SRU-eq-52E" secondAttribute="height" multiplier="0.5" id="R4a-v6-ZiB"/>
+                <constraint firstAttribute="bottom" secondItem="SRU-eq-52E" secondAttribute="bottom" constant="8" id="RbH-mi-icV"/>
+                <constraint firstItem="KEh-xq-ywv" firstAttribute="width" secondItem="SRU-eq-52E" secondAttribute="width" id="Zqf-wu-Ubn"/>
+                <constraint firstItem="SRU-eq-52E" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="bx7-DB-SKn"/>
+                <constraint firstItem="SRU-eq-52E" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.2" id="v5r-29-bCL"/>
+                <constraint firstItem="KEh-xq-ywv" firstAttribute="centerX" secondItem="SRU-eq-52E" secondAttribute="centerX" id="vxG-Cq-taq"/>
+            </constraints>
         </view>
     </objects>
 </document>

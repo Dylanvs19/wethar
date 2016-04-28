@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DVSCurrentDay.h"
+#import "DVSCurrentForecast.h"
 
-@interface MainViewDayForecastView : UIView
+@interface DVSMainViewDayForecastView : UIView
+
+@property (nonatomic, strong)DVSCurrentDay *dayForecast;
+@property (nonatomic, strong)DVSCurrentForecast *currentForecast;
 
 @end

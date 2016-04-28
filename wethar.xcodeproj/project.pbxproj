@@ -30,8 +30,10 @@
 		AFDE014D1CD182A60012EE7A /* DVSNextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFDE014C1CD182A60012EE7A /* DVSNextView.xib */; };
 		AFDE01501CD1833D0012EE7A /* DVSMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE014F1CD1833D0012EE7A /* DVSMainView.m */; };
 		AFDE01531CD1834C0012EE7A /* DVSNextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE01521CD1834C0012EE7A /* DVSNextView.m */; };
-		AFDE01551CD189260012EE7A /* UpArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AFDE01541CD189260012EE7A /* UpArrow.png */; };
-		AFDE01581CD1895A0012EE7A /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AFDE01571CD1895A0012EE7A /* downArrow.png */; };
+		AFDE015B1CD1A7C20012EE7A /* DVSMainViewDayForecastView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE015A1CD1A7C20012EE7A /* DVSMainViewDayForecastView.m */; };
+		AFDE015D1CD1A7E00012EE7A /* DVSMainViewDayForecastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFDE015C1CD1A7E00012EE7A /* DVSMainViewDayForecastView.xib */; };
+		AFDE01601CD25EF60012EE7A /* DownArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AFDE015E1CD25EF60012EE7A /* DownArrow.png */; };
+		AFDE01611CD25EF60012EE7A /* UpArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AFDE015F1CD25EF60012EE7A /* UpArrow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,8 +96,11 @@
 		AFDE014F1CD1833D0012EE7A /* DVSMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSMainView.m; sourceTree = "<group>"; };
 		AFDE01511CD1834C0012EE7A /* DVSNextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSNextView.h; sourceTree = "<group>"; };
 		AFDE01521CD1834C0012EE7A /* DVSNextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSNextView.m; sourceTree = "<group>"; };
-		AFDE01541CD189260012EE7A /* UpArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UpArrow.png; path = ../../../../Desktop/UpArrow.png; sourceTree = "<group>"; };
-		AFDE01571CD1895A0012EE7A /* downArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = downArrow.png; path = ../../../../Desktop/downArrow.png; sourceTree = "<group>"; };
+		AFDE01591CD1A7C20012EE7A /* DVSMainViewDayForecastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSMainViewDayForecastView.h; sourceTree = "<group>"; };
+		AFDE015A1CD1A7C20012EE7A /* DVSMainViewDayForecastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSMainViewDayForecastView.m; sourceTree = "<group>"; };
+		AFDE015C1CD1A7E00012EE7A /* DVSMainViewDayForecastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DVSMainViewDayForecastView.xib; sourceTree = "<group>"; };
+		AFDE015E1CD25EF60012EE7A /* DownArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownArrow.png; sourceTree = "<group>"; };
+		AFDE015F1CD25EF60012EE7A /* UpArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UpArrow.png; sourceTree = "<group>"; };
 		E7218F22C0B070B8423A285A /* libPods-wethar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wethar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7575D897FF9E4C44D1AB7F7 /* Pods-wethar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wethar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wethar/Pods-wethar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +182,7 @@
 				AFDE00E91CCED38F0012EE7A /* ViewController.h */,
 				AFDE00EA1CCED38F0012EE7A /* ViewController.m */,
 				AFDE00EC1CCED38F0012EE7A /* Main.storyboard */,
+				AFDE01561CD1892F0012EE7A /* Images */,
 				AFDE013A1CD125ED0012EE7A /* ModelClasses */,
 				AFDE012C1CD117BE0012EE7A /* APIClients */,
 				AFDE01341CD1210B0012EE7A /* CustomViews */,
@@ -237,7 +243,9 @@
 				AFDE01511CD1834C0012EE7A /* DVSNextView.h */,
 				AFDE01521CD1834C0012EE7A /* DVSNextView.m */,
 				AFDE014C1CD182A60012EE7A /* DVSNextView.xib */,
-				AFDE01561CD1892F0012EE7A /* Images */,
+				AFDE01591CD1A7C20012EE7A /* DVSMainViewDayForecastView.h */,
+				AFDE015A1CD1A7C20012EE7A /* DVSMainViewDayForecastView.m */,
+				AFDE015C1CD1A7E00012EE7A /* DVSMainViewDayForecastView.xib */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -260,8 +268,8 @@
 		AFDE01561CD1892F0012EE7A /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				AFDE01541CD189260012EE7A /* UpArrow.png */,
-				AFDE01571CD1895A0012EE7A /* downArrow.png */,
+				AFDE015E1CD25EF60012EE7A /* DownArrow.png */,
+				AFDE015F1CD25EF60012EE7A /* UpArrow.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -376,13 +384,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFDE01361CD121450012EE7A /* DVSTenDayWeatherForcast.xib in Resources */,
+				AFDE01611CD25EF60012EE7A /* UpArrow.png in Resources */,
 				AFDE00F31CCED38F0012EE7A /* LaunchScreen.storyboard in Resources */,
-				AFDE01551CD189260012EE7A /* UpArrow.png in Resources */,
-				AFDE01581CD1895A0012EE7A /* downArrow.png in Resources */,
 				AFDE00F01CCED38F0012EE7A /* Assets.xcassets in Resources */,
+				AFDE01601CD25EF60012EE7A /* DownArrow.png in Resources */,
 				AFDE014D1CD182A60012EE7A /* DVSNextView.xib in Resources */,
 				AFDE00EE1CCED38F0012EE7A /* Main.storyboard in Resources */,
 				AFDE014B1CD1829A0012EE7A /* DVSMainView.xib in Resources */,
+				AFDE015D1CD1A7E00012EE7A /* DVSMainViewDayForecastView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFDE015B1CD1A7C20012EE7A /* DVSMainViewDayForecastView.m in Sources */,
 				AFDE01331CD120FA0012EE7A /* DVSTenDayWeatherForcast.m in Sources */,
 				AFDE00EB1CCED38F0012EE7A /* ViewController.m in Sources */,
 				AFDE01431CD1508F0012EE7A /* DVSCurrentForecast.m in Sources */,

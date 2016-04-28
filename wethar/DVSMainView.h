@@ -10,8 +10,20 @@
 #import "DVSCurrentForecast.h"
 #import "DVSCurrentDay.h"
 
-@interface DVSMainView : UIView
+@class DVSMainView;
 
+@protocol DVSMainViewDelegate <NSObject>
+
+
+
+@optional
+
+-(void)longPressIsOccuring:(BOOL)ocurring;
+
+@end
+
+@interface DVSMainView : UIView
+@property (nonatomic, weak) id<DVSMainViewDelegate> delegate;
 @property (nonatomic, strong)DVSCurrentForecast *currentForecast;
 @property (nonatomic, strong)NSArray *hourlyForecast;
 @property (nonatomic, strong)DVSCurrentDay *currentDayForecast;

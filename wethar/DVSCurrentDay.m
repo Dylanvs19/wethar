@@ -14,8 +14,8 @@
     
     DVSCurrentDay *finalDay = [[DVSCurrentDay alloc]init];
     
-    finalDay.highTemp =dictionary[@"high"][@"fahrenheit"];
-    finalDay.lowTemp =dictionary[@"low"][@"fahrenheit"];
+    finalDay.highTemp =[dictionary[@"high"][@"fahrenheit"]floatValue];
+    finalDay.lowTemp =[dictionary[@"low"][@"fahrenheit"]floatValue];
     finalDay.dayCondition =dictionary[@"conditions"];
     finalDay.dayIcon =nil;
     finalDay.date = [NSDate date];
