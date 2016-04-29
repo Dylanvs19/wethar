@@ -13,7 +13,7 @@
 #import "DVSMainView.h"
 #import "DVSNextView.h"
   
-@interface ViewController () <DVSMainViewDelegate>
+@interface ViewController () <DVSMainViewDelegate, UIScrollViewDelegate>
 
 @property (nonatomic, strong) DVSDatastore *sharedDatastore;
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
@@ -23,6 +23,9 @@
 @property (strong, nonatomic) IBOutlet UIVisualEffectView *blurView;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *blurViewCenterYON;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *blurViewCenterYOFF;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *flickrImageCenterX;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic) BOOL shouldChangeImage;
 
 @end
 
@@ -41,6 +44,9 @@
     self.blurViewCenterYOFF.constant = -self.view.frame.size.height;
     self.blurViewCenterYON.active = NO;
     self.blurViewCenterYOFF.active = YES;
+    self.mainView.delegate = self;
+    self.scrollView.delegate = self;
+    self.shouldChangeImage = YES;
 }
 
 // SET UP VIEWS
@@ -130,11 +136,11 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)longPressIsOccuring:(BOOL)ocurring {
+-(void)dvsMainViewCell:(DVSMainView *)mainView longPressIsOccuring:(BOOL)ocurring  {
     
     if (ocurring) {
         
-        [UIView animateWithDuration:.05 animations:^{
+        [UIView animateWithDuration:1 animations:^{
            
             self.blurViewCenterYON.active = YES;
             self.blurViewCenterYOFF.active = NO;
@@ -146,7 +152,7 @@
         
     } else {
         
-        [UIView animateWithDuration:.05 animations:^{
+        [UIView animateWithDuration:1 animations:^{
             
             self.blurViewCenterYON.active = NO;
             self.blurViewCenterYOFF.active = YES;
@@ -157,6 +163,26 @@
         
     }
     
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    self.flickrImageCenterX.constant = scrollView.contentOffset.y/20;
+    
+    if (scrollView.contentOffset.y < -self.view.frame.size.height/6 && self.shouldChangeImage) {
+        
+        [self setImageView];
+        
+        self.shouldChangeImage = NO;
+        
+    }
+    
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+    self.shouldChangeImage = YES;
+
 }
 
 

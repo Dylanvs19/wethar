@@ -48,7 +48,7 @@
                     <rect key="frame" x="700" y="49" width="13" height="44"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65328663793103436" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="CkH-7P-U48" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.2" id="07s-jK-R9M"/>
                 <constraint firstItem="DRF-li-WET" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.5" id="2fq-4g-YkF"/>

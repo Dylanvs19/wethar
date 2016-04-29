@@ -19,16 +19,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p1c-hb-IIf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1c-hb-IIf">
                                 <rect key="frame" x="0.0" y="-20" width="600" height="670"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York, NY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvT-pe-luJ">
-                                <rect key="frame" x="239" y="28" width="123" height="28"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbt-mD-by1">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
@@ -58,27 +51,46 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RUI-rp-wbq">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HELLO!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpl-PF-dbv">
+                                            <rect key="frame" x="131" y="235" width="338" height="130"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="100"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59504310344827582" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Xpl-PF-dbv" firstAttribute="centerX" secondItem="RUI-rp-wbq" secondAttribute="centerX" id="Tnh-FM-ecv"/>
+                                        <constraint firstItem="Xpl-PF-dbv" firstAttribute="centerY" secondItem="RUI-rp-wbq" secondAttribute="centerY" id="oNy-SS-AhM"/>
+                                    </constraints>
                                 </view>
-                                <blurEffect style="light"/>
+                                <blurEffect style="dark"/>
                             </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York, NY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvT-pe-luJ">
+                                <rect key="frame" x="239" y="28" width="123" height="28"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="g94-6I-eEO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1fI-7U-GLA"/>
                             <constraint firstItem="g94-6I-eEO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="3Vc-gM-TGw"/>
+                            <constraint firstItem="p1c-hb-IIf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Df-GR-trO"/>
                             <constraint firstItem="dvT-pe-luJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="62w-FC-DDw"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p1c-hb-IIf" secondAttribute="bottom" constant="-50" id="8MH-yV-cm8"/>
+                            <constraint firstItem="p1c-hb-IIf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6ky-4H-JLc"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Cbt-mD-by1" secondAttribute="bottom" id="8fW-VH-H3z"/>
-                            <constraint firstItem="p1c-hb-IIf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-20" id="B3y-al-kgU"/>
                             <constraint firstItem="Cbt-mD-by1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DDb-Dx-KuJ"/>
                             <constraint firstItem="g94-6I-eEO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GIb-Qt-qLv"/>
+                            <constraint firstItem="p1c-hb-IIf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1.1" id="JHw-J7-wZf"/>
                             <constraint firstAttribute="trailing" secondItem="Cbt-mD-by1" secondAttribute="trailing" id="JdH-RA-Vo6"/>
                             <constraint firstItem="g94-6I-eEO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NU7-XT-7NJ"/>
                             <constraint firstItem="Cbt-mD-by1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PvX-dM-6pz"/>
                             <constraint firstItem="Cbt-mD-by1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="c28-1G-qyj"/>
-                            <constraint firstItem="p1c-hb-IIf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="dCx-pu-hft"/>
+                            <constraint firstItem="p1c-hb-IIf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="fr2-LH-NvI"/>
                             <constraint firstItem="g94-6I-eEO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="hA7-w3-4pi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="p1c-hb-IIf" secondAttribute="trailing" constant="-20" id="qbi-uN-gDg"/>
                             <constraint firstItem="dvT-pe-luJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="snR-3y-tT9"/>
                         </constraints>
                     </view>
@@ -87,9 +99,11 @@
                         <outlet property="blurViewCenterYOFF" destination="1fI-7U-GLA" id="wTU-Mp-FfJ"/>
                         <outlet property="blurViewCenterYON" destination="GIb-Qt-qLv" id="Uuq-KP-lzh"/>
                         <outlet property="flickrImage" destination="p1c-hb-IIf" id="7oL-wC-brM"/>
+                        <outlet property="flickrImageCenterX" destination="6ky-4H-JLc" id="Ppf-3V-LBZ"/>
                         <outlet property="locationLabel" destination="dvT-pe-luJ" id="HlH-Nl-Toy"/>
                         <outlet property="mainView" destination="qVK-Ck-8xV" id="5Ac-rg-iMY"/>
                         <outlet property="nextView" destination="Yz7-Ov-idK" id="z4m-fc-zOX"/>
+                        <outlet property="scrollView" destination="Cbt-mD-by1" id="UgA-YC-ptg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

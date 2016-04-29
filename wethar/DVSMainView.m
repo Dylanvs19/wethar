@@ -91,13 +91,13 @@
     
     if(gesture.state == UIGestureRecognizerStateBegan){
         
-            [self.delegate longPressIsOccuring:YES];
-        com
+        [self.delegate dvsMainViewCell:self longPressIsOccuring:YES];
+        
     }
     
     if(gesture.state == UIGestureRecognizerStateEnded){
         
-        [self.delegate longPressIsOccuring:NO];
+        [self.delegate dvsMainViewCell:self longPressIsOccuring:NO];
 
     }
     

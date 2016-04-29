@@ -14,11 +14,9 @@
 
 @protocol DVSMainViewDelegate <NSObject>
 
-
-
 @optional
 
--(void)longPressIsOccuring:(BOOL)ocurring;
+-(void)dvsMainViewCell:(DVSMainView*)mainView longPressIsOccuring:(BOOL)ocurring;
 
 @end
 
