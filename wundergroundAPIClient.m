@@ -12,9 +12,9 @@
 
 @implementation wundergroundAPIClient
 
-+(void)fetchCurrentConditionsWeatherDataForLocationWithCity:(NSString *)city state:(NSString *)state andCompletionBlock:(void(^)(NSDictionary*data))completionBlock {
++(void)fetchAllWeatherInformationCity:(NSString *)city state:(NSString *)state andCompletionBlock:(void (^)(NSDictionary *))completionBlock {
     
-    NSURL *weatherApi = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.wunderground.com/api/%@/conditions/q/%@/%@.json",WEATHER_API_KEY,state,city]];
+    NSURL *weatherApi = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.wunderground.com/api/%@/features/conditions/forecast/forecast10day/hourly/q/%@/%@.json",WEATHER_API_KEY,state,city]];
     
     NSURLSession *session = [NSURLSession sharedSession];
     
@@ -28,64 +28,9 @@
     
     [dataTask resume];
     
-}
 
-+(void)fetchTenDayWeatherForecastWithCity:(NSString *)city state:(NSString *)state andCompletionBlock:(void (^)(NSArray *))completionBlock {
     
-    NSURL *weatherApi = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.wunderground.com/api/%@/features/forecast10day/q/%@/%@.json",WEATHER_API_KEY,state,city]];
     
-    NSURLSession *session = [NSURLSession sharedSession];
-    
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:weatherApi completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
-        NSDictionary *dataToSend = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        
-        NSArray *arrayOfDays = dataToSend[@"forecast"][@"simpleforecast"][@"forecastday"];
-        
-        completionBlock(arrayOfDays);
-        
-    }];
-    
-    [dataTask resume];
-    
-}
-
-+(void)fetchHourlyWeatherForecastWithCity:(NSString *)city state:(NSString *)state andCompletionBlock:(void (^)(NSArray *))completionBlock {
-    
-    NSURL *weatherApi = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.wunderground.com/api/%@/hourly/q/%@/%@.json",WEATHER_API_KEY,state,city]];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:weatherApi completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
-        NSDictionary *dataToSend = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        
-        NSArray *arrayOfHours = dataToSend[@"hourly_forecast"];
-        
-        completionBlock(arrayOfHours);
-        
-    }];
-    
-    [dataTask resume];
-}
-
-+(void)fetchCurrentDayWeatherForecastWithCity:(NSString *)city state:(NSString *)state andCompletionBlock:(void (^)(NSArray *))completionBlock {
-    
-    NSURL *weatherApi = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.wunderground.com/api/%@/forecast/q/%@/%@.json",WEATHER_API_KEY,state,city]];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:weatherApi completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
-        NSDictionary *dataToSend = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        
-        NSArray *finalArray = dataToSend[@"forecast"][@"simpleforecast"][@"forecastday"];
-        
-        completionBlock(finalArray);
-        
-    }];
-    
-    [dataTask resume];
 }
 
 

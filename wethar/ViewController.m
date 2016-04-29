@@ -57,57 +57,17 @@
     
     [self setImageView];
     
-    [self.sharedDatastore getHourlyForcastWithCompletion:^(BOOL isComplete) {
+    [self.sharedDatastore getWeatherForcastWithCompletion:^(BOOL isComplete) {
         
         if(isComplete) {
             
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 
-//                NSLog(@"hourlyWeatherForecast: %@", self.sharedDatastore.hourlyWeatherForecast);
                 self.mainView.hourlyForecast = self.sharedDatastore.hourlyWeatherForecast;
-                
-            }];
-        }
-        
-    }];
-    
-    [self.sharedDatastore getTenDayForcastWithCompletion:^(BOOL isComplete) {
-        
-        if(isComplete) {
-            
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                
-//                NSLog(@"tenDayWeatherForecast: %@", self.sharedDatastore.tenDayWeatherForecast);
-                
                 self.nextView.arrayOfDays = self.sharedDatastore.tenDayWeatherForecast;
-
-            }];
-        }
-
-        
-    }];
-    
-    [self.sharedDatastore getCurrentDayForcastWithCompletion:^(BOOL isComplete) {
-        
-        if(isComplete) {
-            
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                
-//                NSLog(@"currentDayWeatherForecast: %@", self.sharedDatastore.currentDay);
                 self.mainView.currentDayForecast = self.sharedDatastore.currentDay;
-                
-            }];
-        }
-
-    }];
-    
-    [self.sharedDatastore getCurrentConditionsForcastWithCompletion:^(BOOL isComplete) {
-       
-        if(isComplete) {
-            
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 self.mainView.currentForecast = self.sharedDatastore.currentConditions;
-                                
+
             }];
         }
         
@@ -131,16 +91,13 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+// DELEGATE METHOD FROM DVSMAINVEWDELEGATE
 
 -(void)dvsMainViewCell:(DVSMainView *)mainView longPressIsOccuring:(BOOL)ocurring  {
     
     if (ocurring) {
         
-        [UIView animateWithDuration:1 animations:^{
+        [UIView animateWithDuration:0.75 animations:^{
            
             self.blurViewCenterYON.active = YES;
             self.blurViewCenterYOFF.active = NO;
@@ -152,7 +109,7 @@
         
     } else {
         
-        [UIView animateWithDuration:1 animations:^{
+        [UIView animateWithDuration:0.75 animations:^{
             
             self.blurViewCenterYON.active = NO;
             self.blurViewCenterYOFF.active = YES;
@@ -165,11 +122,13 @@
     
 }
 
+//SCROLLVIEWDELEGATE
+
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     self.flickrImageCenterX.constant = scrollView.contentOffset.y/20;
     
-    if (scrollView.contentOffset.y < -self.view.frame.size.height/6 && self.shouldChangeImage) {
+    if (scrollView.contentOffset.y < -self.view.frame.size.height/4 && self.shouldChangeImage) {
         
         [self setImageView];
         

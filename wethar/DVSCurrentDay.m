@@ -11,7 +11,7 @@
 @implementation DVSCurrentDay
 
 +(instancetype)createDVSCurrentDayFromDictionary:(NSDictionary *)dictionary {
-    
+        
     DVSCurrentDay *finalDay = [[DVSCurrentDay alloc]init];
     
     finalDay.highTemp =[dictionary[@"high"][@"fahrenheit"]floatValue];

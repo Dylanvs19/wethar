@@ -41,75 +41,46 @@
     return self;
 }
 
--(void)getTenDayForcastWithCompletion:(void(^)(BOOL))completionBlock{
+-(void)getWeatherForcastWithCompletion:(void(^)(BOOL))completionBlock{
     
     self.tenDayWeatherForecast = [[NSMutableArray alloc]init];
     
-    [wundergroundAPIClient fetchTenDayWeatherForecastWithCity:self.urlCity state:self.state andCompletionBlock:^(NSArray *data) {
+    [wundergroundAPIClient fetchAllWeatherInformationCity:self.urlCity state:self.state andCompletionBlock:^(NSDictionary *data) {
         
-        NSUInteger count = data.count;
+        NSArray *tenDays = data[@"forecast"][@"simpleforecast"][@"forecastday"];
+                
+        NSUInteger tenDayCount = data.count;
         
-        for (NSDictionary *day in data) {
+        for (NSDictionary *day in tenDays) {
             
             [self.tenDayWeatherForecast addObject:[DVSTenDayWeatherDay createDVSTenDayWeatherDayFromDictionary:day]];
             
-            count--;
+            tenDayCount--;
         }
         
-        if (count == 0) {
-            
-            completionBlock(YES);
-        }
-        
-    }];
-    
-}
-
--(void)getCurrentDayForcastWithCompletion:(void(^)(BOOL))completionBlock{
-    
-    [wundergroundAPIClient fetchCurrentDayWeatherForecastWithCity:self.urlCity state:self.state andCompletionBlock:^(NSArray *data) {
-       
-        NSDictionary *currentDayDictionary = [data firstObject];
+        NSDictionary *currentDayDictionary = [tenDays firstObject];
         
         self.currentDay = [DVSCurrentDay createDVSCurrentDayFromDictionary:currentDayDictionary];
-        
-        completionBlock(YES);
-        
-    }];
-}
 
--(void)getCurrentConditionsForcastWithCompletion:(void(^)(BOOL))completionBlock{
-    
-    [wundergroundAPIClient fetchCurrentConditionsWeatherDataForLocationWithCity:self.urlCity state:self.state andCompletionBlock:^(NSDictionary *data) {
-       
-        self.currentConditions = [DVSCurrentForecast createDVSCurrentForecastFromDictionary:data];
         
-        completionBlock(YES);
-
-    }];
-}
-
--(void)getHourlyForcastWithCompletion:(void(^)(BOOL))completionBlock{
-    
-    self.hourlyWeatherForecast = [[NSMutableArray alloc]init];
-    
-    [wundergroundAPIClient fetchHourlyWeatherForecastWithCity:self.urlCity state:self.state andCompletionBlock:^(NSArray *data) {
+        NSArray *hoursData = data[@"hourly_forecast"];
+        
         
         NSUInteger count = data.count;
         
-        for (NSDictionary *day in data) {
+        for (NSDictionary *day in hoursData) {
             
             [self.hourlyWeatherForecast addObject:[DVSHourlyForcastHour createDVSHourlyForcastHourFromDictionary:day]];
             
             count--;
         }
         
-        if (count == 0) {
-            
-            completionBlock(YES);
-        }
+        self.currentConditions = [DVSCurrentForecast createDVSCurrentForecastFromDictionary:data];
+       
+        completionBlock(YES);
         
     }];
+    
 }
 
 -(void)getLocation{

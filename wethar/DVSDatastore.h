@@ -31,13 +31,7 @@
 
 + (instancetype)sharedDatastore;
 
--(void)getTenDayForcastWithCompletion:(void(^)(BOOL))completionBlock;
-
--(void)getCurrentDayForcastWithCompletion:(void(^)(BOOL))completionBlock;
-
--(void)getHourlyForcastWithCompletion:(void(^)(BOOL))completionBlock;
-
--(void)getCurrentConditionsForcastWithCompletion:(void(^)(BOOL))completionBlock;
+-(void)getWeatherForcastWithCompletion:(void(^)(BOOL))completionBlock;
 
 -(void)getLocation;
 
