@@ -60,7 +60,7 @@
     
     UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longpressGestureRecognizerPressed:)];
     [self.contentView addGestureRecognizer:longPressGestureRecognizer];
-    
+
 }
 
 -(void)setHourlyForecast:(NSArray *)hourlyForecast {

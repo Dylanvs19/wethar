@@ -52,16 +52,25 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HELLO!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpl-PF-dbv">
-                                            <rect key="frame" x="131" y="235" width="338" height="130"/>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="100"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59504310344827582" colorSpace="calibratedRGB"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwl-pc-vnO">
+                                            <rect key="frame" x="297" y="240" width="6" height="360"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Td-Zu-tpp">
+                                            <rect key="frame" x="279" y="211" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Xpl-PF-dbv" firstAttribute="centerX" secondItem="RUI-rp-wbq" secondAttribute="centerX" id="Tnh-FM-ecv"/>
-                                        <constraint firstItem="Xpl-PF-dbv" firstAttribute="centerY" secondItem="RUI-rp-wbq" secondAttribute="centerY" id="oNy-SS-AhM"/>
+                                        <constraint firstItem="rwl-pc-vnO" firstAttribute="centerX" secondItem="RUI-rp-wbq" secondAttribute="centerX" id="Wfj-cD-jZQ"/>
+                                        <constraint firstItem="rwl-pc-vnO" firstAttribute="height" secondItem="RUI-rp-wbq" secondAttribute="height" multiplier="0.6" id="cwG-cQ-09k"/>
+                                        <constraint firstAttribute="bottom" secondItem="rwl-pc-vnO" secondAttribute="bottom" id="d2M-0a-NJ2"/>
+                                        <constraint firstItem="rwl-pc-vnO" firstAttribute="top" secondItem="0Td-Zu-tpp" secondAttribute="bottom" constant="8" id="ei5-nS-1VX"/>
+                                        <constraint firstItem="rwl-pc-vnO" firstAttribute="width" secondItem="RUI-rp-wbq" secondAttribute="width" multiplier="0.01" id="eiW-4z-0Dg"/>
+                                        <constraint firstItem="0Td-Zu-tpp" firstAttribute="centerX" secondItem="rwl-pc-vnO" secondAttribute="centerX" id="fkf-yP-uNF"/>
+                                        <constraint firstItem="rwl-pc-vnO" firstAttribute="centerX" secondItem="RUI-rp-wbq" secondAttribute="centerX" id="g3T-sI-Xdw"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="dark"/>
@@ -98,6 +107,8 @@
                         <outlet property="blurView" destination="g94-6I-eEO" id="Kta-Bd-AmF"/>
                         <outlet property="blurViewCenterYOFF" destination="1fI-7U-GLA" id="wTU-Mp-FfJ"/>
                         <outlet property="blurViewCenterYON" destination="GIb-Qt-qLv" id="Uuq-KP-lzh"/>
+                        <outlet property="centerXInside" destination="Wfj-cD-jZQ" id="Quu-rt-hlb"/>
+                        <outlet property="centerXOutSide" destination="g3T-sI-Xdw" id="sSv-rg-m6j"/>
                         <outlet property="flickrImage" destination="p1c-hb-IIf" id="7oL-wC-brM"/>
                         <outlet property="flickrImageCenterX" destination="6ky-4H-JLc" id="Ppf-3V-LBZ"/>
                         <outlet property="locationLabel" destination="dvT-pe-luJ" id="HlH-Nl-Toy"/>

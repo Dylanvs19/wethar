@@ -120,9 +120,12 @@
         for (CLPlacemark * placemark in placemarks) {
             
             self.city = [placemark locality]; // locality means "city"
-            if ([self.city containsString:@" "]) {
+            
+            self.urlCity = self.city;
+            
+            if ([self.urlCity containsString:@" "]) {
                 
-                self.urlCity = [self.city stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+                self.urlCity = [self.urlCity stringByReplacingOccurrencesOfString:@" " withString:@"_"];
             }
             
             self.state = [placemark administrativeArea]; // which is "state" in the U.S.A.

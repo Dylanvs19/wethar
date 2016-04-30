@@ -13,8 +13,10 @@
 #import "DVSMainView.h"
 #import "DVSNextView.h"
   
-@interface ViewController () <DVSMainViewDelegate, UIScrollViewDelegate>
+@interface ViewController () <DVSMainViewDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *centerXInside;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *centerXOutSide;
 @property (nonatomic, strong) DVSDatastore *sharedDatastore;
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *flickrImage;
@@ -47,6 +49,24 @@
     self.mainView.delegate = self;
     self.scrollView.delegate = self;
     self.shouldChangeImage = YES;
+    self.centerXInside.constant = self.view.frame.size.width;
+    self.centerXInside.active = YES;
+    self.centerXOutSide.active = NO;
+    
+    UIScreenEdgePanGestureRecognizer *panleft = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(panDidPan:)];
+    panleft.edges = UIRectEdgeLeft;
+
+    panleft.delegate = self;
+    
+    [self.view addGestureRecognizer:panleft];
+    
+    UIScreenEdgePanGestureRecognizer *panRight = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(panDidPan:)];
+    panRight.edges = UIRectEdgeRight;
+    
+    panRight.delegate = self;
+    
+    [self.view addGestureRecognizer:panRight];
+    
 }
 
 // SET UP VIEWS
@@ -95,30 +115,6 @@
 
 -(void)dvsMainViewCell:(DVSMainView *)mainView longPressIsOccuring:(BOOL)ocurring  {
     
-    if (ocurring) {
-        
-        [UIView animateWithDuration:0.75 animations:^{
-           
-            self.blurViewCenterYON.active = YES;
-            self.blurViewCenterYOFF.active = NO;
-            
-            [self.view layoutIfNeeded];
-            
-        }];
-        
-        
-    } else {
-        
-        [UIView animateWithDuration:0.75 animations:^{
-            
-            self.blurViewCenterYON.active = NO;
-            self.blurViewCenterYOFF.active = YES;
-            
-            [self.view layoutIfNeeded];
-            
-        }];
-        
-    }
     
 }
 
@@ -128,7 +124,7 @@
     
     self.flickrImageCenterX.constant = scrollView.contentOffset.y/20;
     
-    if (scrollView.contentOffset.y < -self.view.frame.size.height/4 && self.shouldChangeImage) {
+    if (scrollView.contentOffset.y < -self.view.frame.size.height/5 && self.shouldChangeImage) {
         
         [self setImageView];
         
@@ -144,5 +140,43 @@
 
 }
 
+// UIGESTUREDELEGATE
+
+-(void)panDidPan:(UIGestureRecognizer*)pan {
+    
+    CGPoint locationInView = [pan locationInView:self.view];
+    
+    
+    
+    if(pan.state == UIGestureRecognizerStateBegan) {
+            
+            [UIView animateWithDuration:0.75 animations:^{
+                
+                self.blurViewCenterYON.active = YES;
+                self.blurViewCenterYOFF.active = NO;
+                
+                [self.view layoutIfNeeded];
+                
+            }];
+        
+    }
+    
+    if (pan.state == UIGestureRecognizerStateEnded){
+                
+                [UIView animateWithDuration:0.75 animations:^{
+                    
+                    self.blurViewCenterYON.active = NO;
+                    self.blurViewCenterYOFF.active = YES;
+                    
+                    [self.view layoutIfNeeded];
+                    
+            }];
+    }
+    
+    
+    NSLog(@"%f, %f", locationInView.x, locationInView.y);
+    
+    
+}
 
 @end
