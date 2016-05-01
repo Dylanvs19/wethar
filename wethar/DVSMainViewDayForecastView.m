@@ -76,6 +76,7 @@
     
     self.highTempLabel.text = [NSString stringWithFormat:@"%li°",(NSInteger)self.dayForecast.highTemp];
     self.lowTempLabel.text = [NSString stringWithFormat:@"%li°",(NSInteger)self.dayForecast.lowTemp];
+    self.currentConditionLabel.text = self.currentForecast.currentCondition;
 
     
 }

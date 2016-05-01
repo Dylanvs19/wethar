@@ -174,6 +174,26 @@
             self.indicatorView.alpha = 1;
             self.indicatorLabel.alpha = 1;
             
+            
+            CGMutablePathRef tempLine = CGPathCreateMutable();
+            CGPathMoveToPoint(tempLine, nil, self.view.frame.origin.x, self.view.frame.origin.y);
+            CGPathAddQuadCurveToPoint(tempLine, nil, 30, 129, 77, 157);
+            CGPathAddCurveToPoint(tempLine, nil, 190, 210, 200, 70, 303, 125);
+            
+            UIBezierPath *mybezierpath = [UIBezierPath
+                                          bezierPathWithCGPath:tempLine];
+            
+            CAShapeLayer *lines = [CAShapeLayer layer];
+            lines.path = mybezierpath.CGPath;
+            lines.bounds = CGPathGetBoundingBox(lines.path);
+            lines.strokeColor = [UIColor whiteColor].CGColor;
+            lines.fillColor = [UIColor clearColor].CGColor; /*if you just want lines*/
+            lines.lineWidth = 3;
+            lines.position = CGPointMake(self.blurView.contentView.frame.size.width/2.0, self.blurView.contentView.frame.size.height/2.0);
+            lines.anchorPoint = CGPointMake(.5, .5);
+            
+            [self.blurView.contentView.layer addSublayer:lines];
+            
             [self.view layoutIfNeeded];
             
             
@@ -201,5 +221,29 @@
     
     
 }
+
+-(void)drawBezierPathInRect:(CGRect)rect inContext:(CGContextRef)context wtihColorSpace:(CGColorSpaceRef)colorSpace{
+    
+    CGMutablePathRef tempLine = CGPathCreateMutable();
+    CGPathMoveToPoint(tempLine, nil, -5, 157);
+    CGPathAddQuadCurveToPoint(tempLine, nil, 30, 129, 77, 157);
+    CGPathAddCurveToPoint(tempLine, nil, 190, 210, 200, 70, 303, 125);
+
+
+    CGPathRelease(tempLine);
+    CGContextRestoreGState(context);
+    
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    [self drawBezierPathInRect:rect inContext:context wtihColorSpace:colorSpace];
+    
+    CGColorSpaceRelease(colorSpace);
+}
+
 
 @end
