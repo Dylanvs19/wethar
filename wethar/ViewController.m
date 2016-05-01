@@ -15,6 +15,8 @@
   
 @interface ViewController () <DVSMainViewDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
+@property (strong, nonatomic) IBOutlet UILabel *indicatorLabel;
+@property (strong, nonatomic) IBOutlet UIView *indicatorView;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *centerXInside;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *centerXOutSide;
 @property (nonatomic, strong) DVSDatastore *sharedDatastore;
@@ -48,10 +50,14 @@
     self.blurViewCenterYOFF.active = YES;
     self.mainView.delegate = self;
     self.scrollView.delegate = self;
+    
     self.shouldChangeImage = YES;
     self.centerXInside.constant = self.view.frame.size.width;
     self.centerXInside.active = YES;
     self.centerXOutSide.active = NO;
+    self.indicatorView.alpha = 0.0;
+    self.indicatorLabel.alpha = 0.0;
+
     
     UIScreenEdgePanGestureRecognizer *panleft = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(panDidPan:)];
     panleft.edges = UIRectEdgeLeft;
@@ -146,6 +152,10 @@
     
     CGPoint locationInView = [pan locationInView:self.view];
     
+    self.centerXInside.active = NO;
+    self.centerXOutSide.constant =(locationInView.x - self.view.frame.size.width/2);
+    self.centerXOutSide.active = YES;
+    self.indicatorLabel.text = [NSString stringWithFormat:@"%f", locationInView.x];
     
     
     if(pan.state == UIGestureRecognizerStateBegan) {
@@ -159,6 +169,16 @@
                 
             }];
         
+        [UIView animateWithDuration:.75 delay:1 options:0 animations:^{
+            
+            self.indicatorView.alpha = 1;
+            self.indicatorLabel.alpha = 1;
+            
+            [self.view layoutIfNeeded];
+            
+            
+        } completion:nil];
+        
     }
     
     if (pan.state == UIGestureRecognizerStateEnded){
@@ -167,6 +187,9 @@
                     
                     self.blurViewCenterYON.active = NO;
                     self.blurViewCenterYOFF.active = YES;
+                    
+                    self.indicatorView.alpha = 0.0;
+                    self.indicatorLabel.alpha = 0.0;
                     
                     [self.view layoutIfNeeded];
                     

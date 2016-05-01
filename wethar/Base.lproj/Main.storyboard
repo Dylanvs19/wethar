@@ -111,6 +111,8 @@
                         <outlet property="centerXOutSide" destination="g3T-sI-Xdw" id="sSv-rg-m6j"/>
                         <outlet property="flickrImage" destination="p1c-hb-IIf" id="7oL-wC-brM"/>
                         <outlet property="flickrImageCenterX" destination="6ky-4H-JLc" id="Ppf-3V-LBZ"/>
+                        <outlet property="indicatorLabel" destination="0Td-Zu-tpp" id="RQu-us-WSH"/>
+                        <outlet property="indicatorView" destination="rwl-pc-vnO" id="wFv-wY-Bjn"/>
                         <outlet property="locationLabel" destination="dvT-pe-luJ" id="HlH-Nl-Toy"/>
                         <outlet property="mainView" destination="qVK-Ck-8xV" id="5Ac-rg-iMY"/>
                         <outlet property="nextView" destination="Yz7-Ov-idK" id="z4m-fc-zOX"/>
