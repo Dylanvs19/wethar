@@ -18,6 +18,10 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EsA-Ha-rsh">
+                    <rect key="frame" x="0.0" y="412" width="600" height="180"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.39674030172413793" colorSpace="calibratedRGB"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRU-eq-52E">
                     <rect key="frame" x="8" y="472" width="300" height="120"/>
                     <color key="tintColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -37,8 +41,12 @@
                 <constraint firstAttribute="bottom" secondItem="SRU-eq-52E" secondAttribute="bottom" constant="8" id="RbH-mi-icV"/>
                 <constraint firstItem="KEh-xq-ywv" firstAttribute="width" secondItem="SRU-eq-52E" secondAttribute="width" id="Zqf-wu-Ubn"/>
                 <constraint firstItem="SRU-eq-52E" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="bx7-DB-SKn"/>
+                <constraint firstItem="EsA-Ha-rsh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ckR-1j-4w6"/>
+                <constraint firstItem="EsA-Ha-rsh" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="g9P-M9-t7s"/>
                 <constraint firstItem="SRU-eq-52E" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.2" id="v5r-29-bCL"/>
                 <constraint firstItem="KEh-xq-ywv" firstAttribute="centerX" secondItem="SRU-eq-52E" secondAttribute="centerX" id="vxG-Cq-taq"/>
+                <constraint firstItem="EsA-Ha-rsh" firstAttribute="top" secondItem="KEh-xq-ywv" secondAttribute="top" id="yH0-HU-wka"/>
+                <constraint firstItem="EsA-Ha-rsh" firstAttribute="bottom" secondItem="SRU-eq-52E" secondAttribute="bottom" id="ykT-E9-eOf"/>
             </constraints>
         </view>
     </objects>

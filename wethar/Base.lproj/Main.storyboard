@@ -19,8 +19,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1c-hb-IIf">
-                                <rect key="frame" x="0.0" y="-20" width="600" height="670"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p1c-hb-IIf">
+                                <rect key="frame" x="0.0" y="-30" width="600" height="660"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavBar.png" translatesAutoresizingMaskIntoConstraints="NO" id="qSB-Xo-Bsm">
+                                <rect key="frame" x="0.0" y="20" width="600" height="90"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbt-mD-by1">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -85,7 +88,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="g94-6I-eEO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1fI-7U-GLA"/>
                             <constraint firstItem="g94-6I-eEO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="3Vc-gM-TGw"/>
                             <constraint firstItem="p1c-hb-IIf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Df-GR-trO"/>
                             <constraint firstItem="dvT-pe-luJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="62w-FC-DDw"/>
@@ -97,15 +99,18 @@
                             <constraint firstAttribute="trailing" secondItem="Cbt-mD-by1" secondAttribute="trailing" id="JdH-RA-Vo6"/>
                             <constraint firstItem="g94-6I-eEO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NU7-XT-7NJ"/>
                             <constraint firstItem="Cbt-mD-by1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PvX-dM-6pz"/>
+                            <constraint firstItem="qSB-Xo-Bsm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="U0A-Iy-bBx"/>
+                            <constraint firstItem="qSB-Xo-Bsm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YNT-ad-rQx"/>
+                            <constraint firstItem="qSB-Xo-Bsm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ZQo-vP-56H"/>
                             <constraint firstItem="Cbt-mD-by1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="c28-1G-qyj"/>
                             <constraint firstItem="p1c-hb-IIf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="fr2-LH-NvI"/>
                             <constraint firstItem="g94-6I-eEO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="hA7-w3-4pi"/>
                             <constraint firstItem="dvT-pe-luJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="snR-3y-tT9"/>
+                            <constraint firstItem="qSB-Xo-Bsm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="yOG-uN-uE0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="blurView" destination="g94-6I-eEO" id="Kta-Bd-AmF"/>
-                        <outlet property="blurViewCenterYOFF" destination="1fI-7U-GLA" id="wTU-Mp-FfJ"/>
                         <outlet property="blurViewCenterYON" destination="GIb-Qt-qLv" id="Uuq-KP-lzh"/>
                         <outlet property="centerXInside" destination="Wfj-cD-jZQ" id="Quu-rt-hlb"/>
                         <outlet property="centerXOutSide" destination="g3T-sI-Xdw" id="sSv-rg-m6j"/>
@@ -124,4 +129,7 @@
             <point key="canvasLocation" x="592" y="395"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NavBar.png" width="373" height="60"/>
+    </resources>
 </document>

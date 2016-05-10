@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A38FE2B44FF734D6A2EB30C /* libPods-wethar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7218F22C0B070B8423A285A /* libPods-wethar.a */; };
+		AFB2FB3B1CE231F200EAD119 /* NavBar.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB2FB3A1CE231F200EAD119 /* NavBar.png */; };
 		AFDE00E51CCED38F0012EE7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE00E41CCED38F0012EE7A /* main.m */; };
 		AFDE00E81CCED38F0012EE7A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE00E71CCED38F0012EE7A /* AppDelegate.m */; };
 		AFDE00EB1CCED38F0012EE7A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE00EA1CCED38F0012EE7A /* ViewController.m */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		AD5C9E823125B120AD959057 /* Pods-wethar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wethar.release.xcconfig"; path = "Pods/Target Support Files/Pods-wethar/Pods-wethar.release.xcconfig"; sourceTree = "<group>"; };
+		AFB2FB3A1CE231F200EAD119 /* NavBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NavBar.png; path = ../../../../Desktop/NavBar.png; sourceTree = "<group>"; };
 		AFDE00E01CCED38F0012EE7A /* wethar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wethar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDE00E41CCED38F0012EE7A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AFDE00E61CCED38F0012EE7A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AFB2FB351CE22FEE00EAD119 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AFB2FB3A1CE231F200EAD119 /* NavBar.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		AFDE00D71CCED38F0012EE7A = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +199,7 @@
 				AFDE00EF1CCED38F0012EE7A /* Assets.xcassets */,
 				AFDE00F11CCED38F0012EE7A /* LaunchScreen.storyboard */,
 				AFDE00F41CCED38F0012EE7A /* Info.plist */,
+				AFB2FB351CE22FEE00EAD119 /* Images */,
 				AFDE00E31CCED38F0012EE7A /* Supporting Files */,
 			);
 			path = wethar;
@@ -392,6 +403,7 @@
 				AFDE00EE1CCED38F0012EE7A /* Main.storyboard in Resources */,
 				AFDE014B1CD1829A0012EE7A /* DVSMainView.xib in Resources */,
 				AFDE015D1CD1A7E00012EE7A /* DVSMainViewDayForecastView.xib in Resources */,
+				AFB2FB3B1CE231F200EAD119 /* NavBar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

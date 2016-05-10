@@ -10,8 +10,8 @@
 
 @interface secrets : NSObject
 
-extern const NSString *WEATHER_API_KEY;
-extern const NSString *FLICKR_API_KEY;
-extern const NSString *FLICKR_API_SECRET;
+extern NSString * const WEATHER_API_KEY;
+extern NSString *const FLICKR_API_KEY;
+extern NSString * constFLICKR_API_SECRET;
 
 @end

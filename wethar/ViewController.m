@@ -45,9 +45,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabelsWithWeatherDataFromCurrentLocationNotification:) name:@"locationInfoComplete" object:nil];
     
     self.blurView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.blurViewCenterYOFF.constant = -self.view.frame.size.height;
-    self.blurViewCenterYON.active = NO;
-    self.blurViewCenterYOFF.active = YES;
+    self.blurViewCenterYOFF.active = NO;
+    self.blurViewCenterYON.active = YES;
+    self.blurView.alpha = 0;
+    
     self.mainView.delegate = self;
     self.scrollView.delegate = self;
     
@@ -160,16 +161,15 @@
     
     if(pan.state == UIGestureRecognizerStateBegan) {
             
-            [UIView animateWithDuration:0.75 animations:^{
+            [UIView animateWithDuration:0.5 animations:^{
                 
-                self.blurViewCenterYON.active = YES;
-                self.blurViewCenterYOFF.active = NO;
-                
+                self.blurView.alpha = 1;
+
                 [self.view layoutIfNeeded];
                 
             }];
         
-        [UIView animateWithDuration:.75 delay:1 options:0 animations:^{
+        [UIView animateWithDuration:.5 delay:0.5 options:0 animations:^{
             
             self.indicatorView.alpha = 1;
             self.indicatorLabel.alpha = 1;
@@ -203,11 +203,9 @@
     
     if (pan.state == UIGestureRecognizerStateEnded){
                 
-                [UIView animateWithDuration:0.75 animations:^{
+                [UIView animateWithDuration:0.5 animations:^{
                     
-                    self.blurViewCenterYON.active = NO;
-                    self.blurViewCenterYOFF.active = YES;
-                    
+                    self.blurView.alpha = 0;
                     self.indicatorView.alpha = 0.0;
                     self.indicatorLabel.alpha = 0.0;
                     
@@ -215,10 +213,6 @@
                     
             }];
     }
-    
-    
-    NSLog(@"%f, %f", locationInView.x, locationInView.y);
-    
     
 }
 
