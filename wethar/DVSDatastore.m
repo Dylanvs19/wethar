@@ -35,7 +35,6 @@
     
     if(self) {
         
-        
     }
     
     return self;
@@ -44,41 +43,49 @@
 -(void)getWeatherForcastWithCompletion:(void(^)(BOOL))completionBlock{
     
     self.tenDayWeatherForecast = [[NSMutableArray alloc]init];
+    self.hourlyWeatherForecast = [[NSMutableArray alloc]init];
     
-    [wundergroundAPIClient fetchAllWeatherInformationCity:self.urlCity state:self.state andCompletionBlock:^(NSDictionary *data) {
+    
+    [wundergroundAPIClient fetchAllWeatherInformationCity:self.urlCity state:self.state andCompletionBlock:^(NSDictionary *data, BOOL success) {
         
-        NSArray *tenDays = data[@"forecast"][@"simpleforecast"][@"forecastday"];
+        if (success) {
+            
+            NSArray *tenDays = data[@"forecast"][@"simpleforecast"][@"forecastday"];
+            
+            NSUInteger tenDayCount = tenDays.count;
+            
+            for (NSDictionary *day in tenDays) {
                 
-        NSUInteger tenDayCount = data.count;
-        
-        for (NSDictionary *day in tenDays) {
+                [self.tenDayWeatherForecast addObject:[DVSTenDayWeatherDay createDVSTenDayWeatherDayFromDictionary:day]];
+                
+                tenDayCount--;
+            }
             
-            [self.tenDayWeatherForecast addObject:[DVSTenDayWeatherDay createDVSTenDayWeatherDayFromDictionary:day]];
+            NSDictionary *currentDayDictionary = [tenDays firstObject];
             
-            tenDayCount--;
+            self.currentDay = [DVSCurrentDay createDVSCurrentDayFromDictionary:currentDayDictionary];
+            
+            
+            NSArray *hoursData = data[@"hourly_forecast"];
+            
+            NSUInteger count = hoursData.count;
+            
+            for (NSDictionary *day in hoursData) {
+                
+                [self.hourlyWeatherForecast addObject:[DVSHourlyForcastHour createDVSHourlyForcastHourFromDictionary:day]];
+                
+                count--;
+            }
+            
+            self.currentConditions = [DVSCurrentForecast createDVSCurrentForecastFromDictionary:data];
+            
+            if (count == 0 && tenDayCount == 0){
+                
+                completionBlock(YES);
+                
+            }
+            
         }
-        
-        NSDictionary *currentDayDictionary = [tenDays firstObject];
-        
-        self.currentDay = [DVSCurrentDay createDVSCurrentDayFromDictionary:currentDayDictionary];
-
-        
-        NSArray *hoursData = data[@"hourly_forecast"];
-        
-        
-        NSUInteger count = data.count;
-        
-        for (NSDictionary *day in hoursData) {
-            
-            [self.hourlyWeatherForecast addObject:[DVSHourlyForcastHour createDVSHourlyForcastHourFromDictionary:day]];
-            
-            count--;
-        }
-        
-        self.currentConditions = [DVSCurrentForecast createDVSCurrentForecastFromDictionary:data];
-       
-        completionBlock(YES);
-        
     }];
     
 }

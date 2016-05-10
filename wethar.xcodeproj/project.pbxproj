@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		9A38FE2B44FF734D6A2EB30C /* libPods-wethar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7218F22C0B070B8423A285A /* libPods-wethar.a */; };
 		AFB2FB3B1CE231F200EAD119 /* NavBar.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB2FB3A1CE231F200EAD119 /* NavBar.png */; };
+		AFB2FB3E1CE23DD000EAD119 /* UIBezierPath+Interpolation.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB2FB3D1CE23DD000EAD119 /* UIBezierPath+Interpolation.m */; };
+		AFB2FB421CE2415A00EAD119 /* DVSThirtySixHourView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB2FB411CE2415A00EAD119 /* DVSThirtySixHourView.m */; };
+		AFB2FB441CE247B800EAD119 /* DVSThirtySixHourView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFB2FB431CE247B800EAD119 /* DVSThirtySixHourView.xib */; };
 		AFDE00E51CCED38F0012EE7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE00E41CCED38F0012EE7A /* main.m */; };
 		AFDE00E81CCED38F0012EE7A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE00E71CCED38F0012EE7A /* AppDelegate.m */; };
 		AFDE00EB1CCED38F0012EE7A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDE00EA1CCED38F0012EE7A /* ViewController.m */; };
@@ -57,6 +60,11 @@
 /* Begin PBXFileReference section */
 		AD5C9E823125B120AD959057 /* Pods-wethar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wethar.release.xcconfig"; path = "Pods/Target Support Files/Pods-wethar/Pods-wethar.release.xcconfig"; sourceTree = "<group>"; };
 		AFB2FB3A1CE231F200EAD119 /* NavBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NavBar.png; path = ../../../../Desktop/NavBar.png; sourceTree = "<group>"; };
+		AFB2FB3C1CE23DD000EAD119 /* UIBezierPath+Interpolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Interpolation.h"; sourceTree = "<group>"; };
+		AFB2FB3D1CE23DD000EAD119 /* UIBezierPath+Interpolation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Interpolation.m"; sourceTree = "<group>"; };
+		AFB2FB401CE2415A00EAD119 /* DVSThirtySixHourView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVSThirtySixHourView.h; sourceTree = "<group>"; };
+		AFB2FB411CE2415A00EAD119 /* DVSThirtySixHourView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVSThirtySixHourView.m; sourceTree = "<group>"; };
+		AFB2FB431CE247B800EAD119 /* DVSThirtySixHourView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DVSThirtySixHourView.xib; sourceTree = "<group>"; };
 		AFDE00E01CCED38F0012EE7A /* wethar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wethar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFDE00E41CCED38F0012EE7A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AFDE00E61CCED38F0012EE7A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -158,6 +166,15 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		AFB2FB3F1CE23DD500EAD119 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				AFB2FB3C1CE23DD000EAD119 /* UIBezierPath+Interpolation.h */,
+				AFB2FB3D1CE23DD000EAD119 /* UIBezierPath+Interpolation.m */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
 		AFDE00D71CCED38F0012EE7A = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +209,7 @@
 				AFDE00E91CCED38F0012EE7A /* ViewController.h */,
 				AFDE00EA1CCED38F0012EE7A /* ViewController.m */,
 				AFDE00EC1CCED38F0012EE7A /* Main.storyboard */,
+				AFB2FB3F1CE23DD500EAD119 /* Operations */,
 				AFDE01561CD1892F0012EE7A /* Images */,
 				AFDE013A1CD125ED0012EE7A /* ModelClasses */,
 				AFDE012C1CD117BE0012EE7A /* APIClients */,
@@ -257,6 +275,9 @@
 				AFDE01591CD1A7C20012EE7A /* DVSMainViewDayForecastView.h */,
 				AFDE015A1CD1A7C20012EE7A /* DVSMainViewDayForecastView.m */,
 				AFDE015C1CD1A7E00012EE7A /* DVSMainViewDayForecastView.xib */,
+				AFB2FB401CE2415A00EAD119 /* DVSThirtySixHourView.h */,
+				AFB2FB411CE2415A00EAD119 /* DVSThirtySixHourView.m */,
+				AFB2FB431CE247B800EAD119 /* DVSThirtySixHourView.xib */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -394,6 +415,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFB2FB441CE247B800EAD119 /* DVSThirtySixHourView.xib in Resources */,
 				AFDE01361CD121450012EE7A /* DVSTenDayWeatherForcast.xib in Resources */,
 				AFDE01611CD25EF60012EE7A /* UpArrow.png in Resources */,
 				AFDE00F31CCED38F0012EE7A /* LaunchScreen.storyboard in Resources */,
@@ -482,6 +504,8 @@
 				AFDE01431CD1508F0012EE7A /* DVSCurrentForecast.m in Sources */,
 				AFDE01401CD1326B0012EE7A /* DVSHourlyForcastHour.m in Sources */,
 				AFDE01181CCEE18F0012EE7A /* secrets.m in Sources */,
+				AFB2FB421CE2415A00EAD119 /* DVSThirtySixHourView.m in Sources */,
+				AFB2FB3E1CE23DD000EAD119 /* UIBezierPath+Interpolation.m in Sources */,
 				AFDE01251CD014D10012EE7A /* flickrAPIClient.m in Sources */,
 				AFDE012B1CD10B400012EE7A /* DVSDatastore.m in Sources */,
 				AFDE00E81CCED38F0012EE7A /* AppDelegate.m in Sources */,

@@ -55,6 +55,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zj-YJ-DJr" customClass="DVSThirtySixHourView">
+                                            <rect key="frame" x="0.0" y="280" width="600" height="300"/>
+                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwl-pc-vnO">
                                             <rect key="frame" x="297" y="240" width="6" height="360"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,7 +70,11 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="9zj-YJ-DJr" firstAttribute="width" secondItem="RUI-rp-wbq" secondAttribute="width" id="69n-uP-66W"/>
+                                        <constraint firstItem="9zj-YJ-DJr" firstAttribute="height" secondItem="RUI-rp-wbq" secondAttribute="height" multiplier="0.5" id="JBc-NK-0Am"/>
+                                        <constraint firstItem="9zj-YJ-DJr" firstAttribute="centerX" secondItem="RUI-rp-wbq" secondAttribute="centerX" id="Llm-j5-KjB"/>
                                         <constraint firstItem="rwl-pc-vnO" firstAttribute="centerX" secondItem="RUI-rp-wbq" secondAttribute="centerX" id="Wfj-cD-jZQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="9zj-YJ-DJr" secondAttribute="bottom" constant="20" id="XJM-Dh-bAU"/>
                                         <constraint firstItem="rwl-pc-vnO" firstAttribute="height" secondItem="RUI-rp-wbq" secondAttribute="height" multiplier="0.6" id="cwG-cQ-09k"/>
                                         <constraint firstAttribute="bottom" secondItem="rwl-pc-vnO" secondAttribute="bottom" id="d2M-0a-NJ2"/>
                                         <constraint firstItem="rwl-pc-vnO" firstAttribute="top" secondItem="0Td-Zu-tpp" secondAttribute="bottom" constant="8" id="ei5-nS-1VX"/>
@@ -122,6 +129,7 @@
                         <outlet property="mainView" destination="qVK-Ck-8xV" id="5Ac-rg-iMY"/>
                         <outlet property="nextView" destination="Yz7-Ov-idK" id="z4m-fc-zOX"/>
                         <outlet property="scrollView" destination="Cbt-mD-by1" id="UgA-YC-ptg"/>
+                        <outlet property="thirtySixHourView" destination="9zj-YJ-DJr" id="oZl-6Y-KIH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

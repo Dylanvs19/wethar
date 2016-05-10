@@ -12,7 +12,7 @@
 
 @implementation wundergroundAPIClient
 
-+(void)fetchAllWeatherInformationCity:(NSString *)city state:(NSString *)state andCompletionBlock:(void (^)(NSDictionary *))completionBlock {
++(void)fetchAllWeatherInformationCity:(NSString *)city state:(NSString *)state andCompletionBlock:(void (^)(NSDictionary * data, BOOL success))completionBlock {
     
     NSURL *weatherApi = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.wunderground.com/api/%@/features/conditions/forecast/forecast10day/hourly/q/%@/%@.json",WEATHER_API_KEY,state,city]];
     
@@ -20,9 +20,19 @@
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithURL:weatherApi completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+
         NSDictionary *dataToSend = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
-        completionBlock(dataToSend);
+        if (httpResponse.statusCode == 200){
+        
+            completionBlock(dataToSend, YES);
+            
+        } else {
+            
+            completionBlock(dataToSend, NO);
+        }
+        
         
     }];
     

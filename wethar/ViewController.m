@@ -12,6 +12,8 @@
 #import "DVSDatastore.h"
 #import "DVSMainView.h"
 #import "DVSNextView.h"
+#import "DVSThirtySixHourView.h"
+#import "DVSHourlyForcastHour.h"
   
 @interface ViewController () <DVSMainViewDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
@@ -26,9 +28,9 @@
 @property (strong, nonatomic) IBOutlet DVSNextView *nextView;
 @property (strong, nonatomic) IBOutlet UIVisualEffectView *blurView;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *blurViewCenterYON;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *blurViewCenterYOFF;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *flickrImageCenterX;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet DVSThirtySixHourView *thirtySixHourView;
 @property (nonatomic) BOOL shouldChangeImage;
 
 @end
@@ -45,7 +47,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLabelsWithWeatherDataFromCurrentLocationNotification:) name:@"locationInfoComplete" object:nil];
     
     self.blurView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.blurViewCenterYOFF.active = NO;
     self.blurViewCenterYON.active = YES;
     self.blurView.alpha = 0;
     
@@ -91,6 +92,7 @@
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 
                 self.mainView.hourlyForecast = self.sharedDatastore.hourlyWeatherForecast;
+                self.thirtySixHourView.thirtySixHourForecast = self.sharedDatastore.hourlyWeatherForecast;                
                 self.nextView.arrayOfDays = self.sharedDatastore.tenDayWeatherForecast;
                 self.mainView.currentDayForecast = self.sharedDatastore.currentDay;
                 self.mainView.currentForecast = self.sharedDatastore.currentConditions;
@@ -173,26 +175,6 @@
             
             self.indicatorView.alpha = 1;
             self.indicatorLabel.alpha = 1;
-            
-            
-            CGMutablePathRef tempLine = CGPathCreateMutable();
-            CGPathMoveToPoint(tempLine, nil, self.view.frame.origin.x, self.view.frame.origin.y);
-            CGPathAddQuadCurveToPoint(tempLine, nil, 30, 129, 77, 157);
-            CGPathAddCurveToPoint(tempLine, nil, 190, 210, 200, 70, 303, 125);
-            
-            UIBezierPath *mybezierpath = [UIBezierPath
-                                          bezierPathWithCGPath:tempLine];
-            
-            CAShapeLayer *lines = [CAShapeLayer layer];
-            lines.path = mybezierpath.CGPath;
-            lines.bounds = CGPathGetBoundingBox(lines.path);
-            lines.strokeColor = [UIColor whiteColor].CGColor;
-            lines.fillColor = [UIColor clearColor].CGColor; /*if you just want lines*/
-            lines.lineWidth = 3;
-            lines.position = CGPointMake(self.blurView.contentView.frame.size.width/2.0, self.blurView.contentView.frame.size.height/2.0);
-            lines.anchorPoint = CGPointMake(.5, .5);
-            
-            [self.blurView.contentView.layer addSublayer:lines];
             
             [self.view layoutIfNeeded];
             

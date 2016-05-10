@@ -20,7 +20,6 @@
     finalHour.hourIcon = nil;
     
     return finalHour;
-    
 }
 
 
